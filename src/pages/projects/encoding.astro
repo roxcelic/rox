@@ -1,0 +1,105 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Box from '../../components/somthing.astro';
+---
+
+<Layout title="encoding!">
+	<main>
+		<ul role="list">
+			<Box
+				
+			/>
+            <h6>
+                <p id="output">void</p>
+            </h6>
+            <h2>
+                <form onsubmit="return myFunction()">
+                    input: <input type="text" id="input" size="20" name="input"><br>
+                </form>
+                <button onclick="myFunction()">push it.</button>
+            </h2>
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	
+</style>
+<script is:inline>
+
+	const copyContent = async (text) => {
+	   try {
+		   await navigator.clipboard.writeText(text);
+		   window.alert('Content copied to clipboard');
+		   } catch (err) {
+		   console.error('Failed to copy: ', err);
+		   window.alert('Failed to copy: ', err);
+		   }
+	   }
+
+   function myFunction(){
+	   var input = document.getElementById("input").value;
+	   var output = "0"
+	   var count = [3,3,3,3,3,3,3,3,3]
+	   var passing = 1
+	   var counting = "false"
+	   var item = 7
+	   var end = "false"
+	   var text = input
+	   var count3 = ""
+	   
+	   for (items in input){
+		   input2 = text.charCodeAt(items);
+
+		   while (end == "false"){
+			   if (passing != 0){
+				   var counting = "true"
+
+				   while (counting == "true"){
+					   if (count[item] == 3){
+						   count[item] = count[item] + 1
+						   if (item != 8){
+							   var item = 8
+							   var counting = "false"
+						   }
+					   }
+					   else if (count[item] == 4){
+						   count[item] = count[item] + 3
+						   if (item != 8){
+							   var item = 8
+							   var counting = "false"
+						   }
+					   }
+					   else if (count[item] == 7){
+						   count[item] = 3
+						   if (item != 0){
+							   var item = item - 1
+						   }
+					   }
+				   }
+
+				   var passing = passing + 1
+				   var count2 = count
+			   
+				   if (passing == input2){
+					   count = count.join("")
+					   end = "true"
+					   counting = "false"
+				   }
+				   if (count == [7,7,7,7,7,7,7,7,3]){
+					   end = "true"
+					   count = "ERROR"
+				   }
+			   }
+		   }
+		   count = count.toString()
+		   count = count.slice(0, -1);
+		   count3 = count3 + count
+		   count = [3,3,3,3,3,3,3,3,3]
+		   passing = 1
+		   end = "false"
+	   } 
+	   document.getElementById("output").innerHTML = count3
+	   copyContent(count3);
+   }   
+</script>

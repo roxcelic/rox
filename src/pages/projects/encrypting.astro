@@ -1,0 +1,121 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Box from '../../components/somthing.astro';
+---
+
+<Layout title="encrypting!">
+	<main>
+		<ul role="list">
+			<Box
+				
+			/>
+
+            <h6>
+                <p id="key">key</p>
+                <p id="output">void</p>
+            </h6>
+            <h2>
+                <form onsubmit="return myFunction()">
+                    input: <input type="text" id="input" size="20" name="input"><br>
+                </form>
+                <button onclick="myFunction()">push it.</button>
+            </h2>
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	
+</style>
+<script is:inline>
+
+	const copyContent = async (text) => {
+		try {
+			await navigator.clipboard.writeText(text);
+			window.alert('Content copied to clipboard');
+			} catch (err) {
+			console.error('Failed to copy: ', err);
+			window.alert('Failed to copy: ', err);
+			}
+		}
+
+	var hexs = {
+		0 : "0",
+		1 : "1",
+		2 : "2",
+		3 : "3",
+		4 : "4",
+		5 : "5",
+		6 : "6",
+		7 : "7",
+		8 : "8",
+		9 : "9",
+		10 : "a",
+		11 : "b",
+		12 : "c",
+		13 : "d",
+		14 : "e",
+		15 : "f",
+	}
+
+	function getRandomInt(max) {
+		return Math.floor(Math.random() * max);
+	}
+
+
+	function myFunction(){
+		var input = document.getElementById("input").value;
+
+		console.log(input)
+
+		var boop = 1
+		var key1 = ""
+		var key2 = ""
+		var out = ""
+		var key3 = ""
+		var passing = 0
+		var count = 0
+		var number2 = ""
+		var num = ""
+		var number = input
+
+		while (passing != 8){
+			key1 = key1 + getRandomInt(3);
+			passing = passing + 1
+		}
+		key2 = getRandomInt(9);
+		passing = 0
+		while (passing != 5){
+			keydata = getRandomInt(15);
+			key3 = key3 + hexs[keydata]
+			boop = boop * keydata
+			passing = passing + 1
+		}
+
+		console.log(number)
+		boop = boop * key2
+		for (item in number){
+			if (count != 8){
+				count = count + 1
+				num = num + number[item]
+			}
+			if (count == 8){
+				num = num - key1
+				num = num + boop
+				number2 = number2 + num
+				count = 0
+				num = ""
+			}
+		}
+
+		keys = key1 + " " + key2 + " " + key3
+		out = out
+		out = keys
+		output = number2
+
+		document.getElementById("key").innerHTML = out
+		document.getElementById("output").innerHTML = output
+		content = out + "\n" + output
+		copyContent(content);
+	}
+</script>

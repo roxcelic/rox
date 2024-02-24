@@ -1,0 +1,40 @@
+---
+const { frontmatter } = Astro.props;
+import Box from '../components/Card.astro';
+import '../res/css/style.css';
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/images/icon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{frontmatter.title}</title>
+    </head>
+
+    <Box
+	    title={frontmatter.title}
+    />
+
+    <div class="mainBox">
+        <div class="pictureBox" style="background-image: url('https://roxcelic.github.io/rox/images/banger.gif');"></div>
+        <h4>{frontmatter.title}</h4>
+        <h2>
+            <p>Written by {frontmatter.author}</p>
+            description and credits (careful it moves):<br>
+            <marquee>
+                <p><div class="boxs">{frontmatter.desc}{frontmatter.credits}</div></p>
+            </marquee>
+            <h2><slot /></h2>
+        </h2>
+    </div>
+
+    <style>
+        .boxs{
+            font-size: 0.75rem;
+            color: white;
+        }
+    </style>
+</html>

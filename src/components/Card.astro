@@ -1,0 +1,47 @@
+---
+interface Props {
+	title: string;
+}
+
+const {title} = Astro.props;
+---
+
+<li class="box">
+	<h2>
+
+	</h2>
+	<p>
+		<a href="/rox/"><h3>index</h3></a><div class="vertical-row"></div>
+        <a href="/rox/blog/"><h3>blog</h3></a><div class="vertical-row"></div>
+        <a href="/rox/projects/"><h3>projects</h3></a><div class="vertical-row"></div>
+        <a href="/rox/about_me/"><h3>about_me</h3></a>
+	</p>
+</li>
+
+<style>
+	.box{
+        display: block;
+		text-align: center;
+        position: relative;
+        margin-top: 2.5%;
+        width: 69%;
+		left: 14%;
+        border: 3px solid rgb(245, 122, 169);
+        background-color: rgba(255, 0, 0, 0.5);
+        padding-bottom: 1%;
+    }
+    .vertical-row {
+        left: 25%;
+        display: inline-block;
+        height: 1rem;
+        width:1px; /* edit this if you want */
+        background-color: white;
+    } 
+    .title{
+        justify-content: center;
+        text-align: center;
+        font-size: 2rem;
+        color: white;
+        padding-top: 2.5%;
+    }
+</style>

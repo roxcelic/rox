@@ -1,0 +1,15 @@
+---
+const { title, url, dates } = Astro.props;
+---
+
+<li>
+	<a href={url}>
+		<div class="boxL">
+			<h2>
+				{dates} - {title}
+			</h2>
+		</div>
+	</a>
+</li>
+<style>
+</style>
