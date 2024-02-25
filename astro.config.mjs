@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://roxelic.github.io',
-    base: '/rox',
+    site: 'https://roxelic.love',
 });
 
