@@ -26,7 +26,7 @@ import Layout from '../../layouts/Layout.astro';
 		background-color: pink;
 		width: 20px;
 		height: 80px;
-        background-image: url("rox/../../images/book-u.png");
+        background-image: url("/../../images/book-u.png");
         background-repeat: no-repeat;
         background-size: cover;
 	}
@@ -41,14 +41,14 @@ import Layout from '../../layouts/Layout.astro';
 <script is:inline>
     function item_hover(description, ids, id){
         if (description == ""){
-            document.getElementById(id).style.backgroundImage="url(rox/../../images/book-e.png)";
+            document.getElementById(id).style.backgroundImage="url(/../../images/book-e.png)";
         }
         else{
             document.getElementById(ids).innerHTML = description
-            document.getElementById(id).style.backgroundImage="url(rox/../../images/book-s.png)";
+            document.getElementById(id).style.backgroundImage="url(/../../images/book-s.png)";
         }
     }
     function item_leave(id){
-        document.getElementById(id).style.backgroundImage="url(rox/../../images/book-u.png)";
+        document.getElementById(id).style.backgroundImage="url(/../../images/book-u.png)";
     }
 </script>
