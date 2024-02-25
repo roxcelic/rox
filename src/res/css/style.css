@@ -1,6 +1,6 @@
 html{
     background-color: pink;
-    background-image: url('/images/image.svg');
+    background-image: url('/rox/images/image.svg');
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100%;
@@ -95,6 +95,9 @@ h6{
     left: 14%;
     border: 3px solid rgb(245, 122, 169);
     background-color: rgba(255, 0, 0, 0.5);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 ul {

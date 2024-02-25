@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="home!">
+	<main>
+        <h4>welcome to the library</h4>
+        <h2>this page will be used for game content, currently there is nothing but empty content</h2>
+        <h2>when you hover over a book it will display the title and clicking it will display the content, if whent the book is hoverd over it goes red then that book contains no content</h2>
+        <h2 id="title">hi</h2>
+        <h2 id="content">content</h2>
+		<div class="book" id=0 onmouseover="item_hover('','title', 0)" onclick="item_hover('','content', 0)" onmouseleave="item_leave(0)"></div>
+        <div class="book" id=1 onmouseover="item_hover('','title', 1)" onclick="item_hover('','content', 1)" onmouseleave="item_leave(1)"></div>
+	</main>
+</Layout>
+<style>
+    main {
+    	list-style-type: none;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        font-size: 0;
+	}
+    .book{
+		display: inline-block;
+		background-color: pink;
+		width: 20px;
+		height: 80px;
+        background-image: url("rox/../../images/book-u.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+	}
+	.book:hover{
+		display: inline-block;
+		background-color: yellow;
+		width: 20px;
+		height: 80px;
+		border: 3px solid green;
+	}
+</style>
+<script is:inline>
+    function item_hover(description, ids, id){
+        if (description == ""){
+            document.getElementById(id).style.backgroundImage="url(rox/../../images/book-e.png)";
+        }
+        else{
+            document.getElementById(ids).innerHTML = description
+            document.getElementById(id).style.backgroundImage="url(rox/../../images/book-s.png)";
+        }
+    }
+    function item_leave(id){
+        document.getElementById(id).style.backgroundImage="url(rox/../../images/book-u.png)";
+    }
+</script>

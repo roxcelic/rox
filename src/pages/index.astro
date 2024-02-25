@@ -3,12 +3,12 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="home!">
-	<main>
+	<main onkeypress="god_save_me()">
 		<ul role="list">
 			<h2>
                 Hiiii
             </h2>
-            <h2>
+            <h2 id="main">
                 welcome to my first website using astro, im gonna be fully honest
                 i have no clue if ive done it right lmao, but ive tried and had a lot of fun
                 and im learning a lot.<br>
@@ -32,3 +32,44 @@ import Layout from '../layouts/Layout.astro';
 <style>
 	
 </style>
+
+<script is:inline>
+    const main = document.getElementById("main")
+    linebreak = document.createElement("br");
+    var item = 0;
+    var word = "howdy";
+    var key_list = "";
+
+    document.addEventListener(
+        "keydown",
+        function(event){
+            var current_key = event.key;
+            console.log('current_key: ',current_key);
+            if(current_key == word[item]){
+                key_list = key_list + current_key;
+                item++;
+                console.log('key_list: ',key_list);
+            }
+            else{
+                key_list = "";
+                item = 0;
+                console.log("sorry wrong letter");
+            }
+            if(key_list == word){
+                console.log("omg you did it yayyy");
+                key_list = "";
+                item = 0;
+
+                var a = document.createElement('a');
+                var link = document.createTextNode("lonk");
+                a.appendChild(link); 
+                a.href = "/rox/projects/library"; 
+
+                main.innerHTML = "you may pass  ";
+                main.appendChild(linebreak);
+                main.appendChild(a); 
+            }
+        },
+    );
+
+</script>
