@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import BlogPost from '../components/blog.astro';
+import Blog from '../components/blog.astro';
 ---
 
 <Layout title="projects">
@@ -28,12 +28,7 @@ import BlogPost from '../components/blog.astro';
             </div>
 
             <h2>-not a website page-</h2>
-
-            <div class="boxL" onmouseover="item_hover('I made an encoding and encrypting format using the numbers 3,4 and 7 because I got bored of binary during an computer science lesson lesson','item3')" onmouseleave="item_hover('my encryption format!','item3')">
-                <a href="https://github.com/roxcelic/37473-44337-43733">
-                    <h2 id="item3">my encryption format!</h2>
-                </a>    
-            </div>
+            
             <div class="boxL" onmouseover="item_hover('here is the beta design for the player character','item4')" onmouseleave="item_hover(' character design!','item4')">
                 <a href="/images/player.png">
                     <h2 id="item4">character design!</h2>
@@ -44,6 +39,8 @@ import BlogPost from '../components/blog.astro';
                         <h2 id="item5">an animation of the character!</h2>
                 </a>              
             </div>
+            <h2><span id="repocount"></span> -github repositories-</h2>
+            <div id="github"></div>
 	</main>
 </Layout>
 
@@ -52,8 +49,49 @@ import BlogPost from '../components/blog.astro';
     	list-style-type: none;
 	}
 </style>
-<script is:inline>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" is:inline></script>
+<script is:inline type="text/javascript">
     function item_hover(description, ids){
         document.getElementById(ids).innerHTML = description
     }
+
+    user = 'roxcelic'
+    apirepo = `https://api.github.com/users/${user}`
+
+    listrepos = document.createElement('a')
+    document.getElementById('github').appendChild(listrepos)
+    $.getJSON(apirepo + '/repos', function (data) {
+
+        function compare(a, b) {
+            if (a.watchers > b.watchers) {
+                return -1
+            }
+            if (a.watchers < b.watchers) {
+                return 1
+            }
+            return 0
+        }
+
+        data.sort(compare)
+        data.forEach(v => {
+
+            listItemRepo = document.createElement('div');
+            listrepos.appendChild(listItemRepo);
+            listItemRepo.className = "boxL";
+            listItemRepo2 = document.createElement('h2');
+            lhref = document.createElement('a');
+            listItemRepo2.id = `${v.name}`;
+            lhref.style.color = 'white';
+            listItemRepo2.appendChild(lhref);
+            listItemRepo.appendChild(listItemRepo2);
+            lhref.textContent = `${v.name}`;
+            lhref.href = v.html_url;
+
+            listItemRepo.addEventListener("mouseover",() =>  item_hover(`${v.description}`, `${v.name}`))
+            listItemRepo.addEventListener("mouseleave",() =>  item_hover(`${v.name}`, `${v.name}`))
+        })
+    })
 </script>
+<style>
+
+</style>
