@@ -15,26 +15,29 @@ import '../res/css/style.css';
 		<meta charset="UTF-8" />
 		<meta name="description" content="the worlds coolest website (because it was made by me)" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/images/icon.png" />
+		<link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/157179472?v=4">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
-		<Bar
-			{title}
-		/>
 		<Box
 			{title}
 		/>
 		<div class="mainBox">
-			<div class="pictureBox" style="background-image: url('/images/wallpaper.jpg');"></div>
+			<div class="pictureBox"></div>
+			<a href="https://github.com/roxcelic">
+				<div class="roundThing"></div>
+			</a>
 			<slot />
 		</div>
+		<Bar
+			{title}
+		/>
 	</body>
 </html>
 <style is:global>
-	
+	body{
+		margin: 0;
+    	padding: 0;
+	}
 </style>
-<script is:inline>
-
-</script>

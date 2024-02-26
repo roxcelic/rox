@@ -1,11 +1,10 @@
 html{
     background-color: pink;
-    background-image: url('/images/image.svg');
+    background-image: url('../../../public/images/wall.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100%;
-    min-width: 100%;
-    font-family: my_font;
+    min-width: 100%
 }
 body::after {
     content: "";
@@ -16,28 +15,6 @@ body::after {
     height: 100vh;
     pointer-events: none;
     background: repeating-linear-gradient(0deg, rgba(0, 0, 0, .25), rgba(0, 0, 0, .25) 1px, transparent 2px, transparent 3px);
-}
-
-.mainbox{
-    display: block;
-    margin-top: -13%;
-    position: relative;
-    margin-left: 14%;
-    margin-right: 14%;
-    width: 69%;
-    border: 3px solid rgb(245, 122, 169);
-    background-color: rgba(255, 0, 0, 0.5);
-}
-
-/*this is where i will make a round thing*/
-.roundThing{
-    height: 50px;
-    width: 50px;
-    background-color: pink;
-    background-image: url('../images/pfp.png');
-    background-size: cover;
-    border-radius: 50%;
-    display: inline-block;
 }
 
 /*this is the text*/
@@ -90,14 +67,12 @@ h6{
     display: block;
     text-align: center;
     position: relative;
-    margin-top: 1%;
+    margin-top: 3vh;
     width: 69%;
     left: 14%;
     border: 3px solid rgb(245, 122, 169);
     background-color: rgba(255, 0, 0, 0.5);
     list-style-type: none;
-    margin: 0;
-    padding: 0;
 }
 
 ul {
@@ -161,64 +136,28 @@ ul {
 .timer2 div{
     flex-basis: 100%;
 }
-.pictureBox{
-    position: relative;
-    width: 99.6%;
-    height: 5rem;
-    border: 3px solid rgb(245, 122, 169);
-    background-color: rgba(0, 0, 0, 0.5);
-}
 
 @media (min-width: 50px) {
-
-    /*this is the text*/
-    h1{
-        color: aliceblue;
-        font-size: xx-small;
+    .bar{
+        width: 100%;
+        height: 0%;
     }
-
-    h2{
+    .text{
         color: white;
-        font-size: xx-small;
-        text-align: center;
-        font-weight: normal;
+        font-size: 0px;
     }
-
-    h3{
-        color: aliceblue;
-        font-size: xx-small;
-        text-align: center;
-        display: inline;
-        padding: 3%;
+    /*this is where i will make a round thing*/
+    .roundThing{
+        height: 0px;
+        width: 0px;
     }
-
-    h4{
-        color: aliceblue;
-        font-size: x-small;
-        font-weight: bold;
-        text-align: center;
+    .pictureBox{
+        position:relative;
+        width: 100%;
+        height: 5rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        background-image: url("../../../public/images/wallpaper.jpg");
     }
-
-    h5{
-        color: aliceblue;
-        font-size: medium;
-        align-content: center;
-        text-align: center;
-    }
-    h6{
-        color: aliceblue;
-        font-size: x-small;
-        font-weight: bold;
-        text-align: center;
-        white-space: pre-wrap; 
-        white-space: -moz-pre-wrap;
-        white-space: -pre-wrap;
-        white-space: -o-pre-wrap;
-        word-wrap: break-word;
-    }
-}
-
-@media (min-width: 400px) {
 
     /*this is the text*/
     h1{
@@ -268,6 +207,36 @@ ul {
 }
 
 @media (min-width: 800px) {
+    .bar{
+        background-image: url("/images/why.png");
+        background-repeat: repeat-x;
+        width: 100%;
+        height: 32px;
+        justify-content: center;
+        position: absolute;
+        bottom: 1px;
+        opacity: 0.5;
+    }
+    .text{
+        color: white;
+        font-size: 28px;
+    }
+    /*this is where i will make a round thing*/
+    .roundThing{
+        height: 75px;
+        width: 75px;
+        background-color: pink;
+        background-image: url('https://avatars.githubusercontent.com/u/157179472?v=4');
+        background-size: cover;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 1%;
+    }
+    .pictureBox{
+        position:relative;
+        width: 100%;
+        height: 0rem;
+    }
 
     /*this is the text*/
     h1{
