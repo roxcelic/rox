@@ -1,0 +1,96 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="spotify">
+	<main>
+        <h4>welcome to hangman!</h4>
+        <h2>just type and itll display your things (:</h2>
+        <h2 id="life"></h2>
+        <h2 id="typing"></h2>
+        <h2 id="message"></h2>
+        <h2 id="total"></h2>
+	</main>
+</Layout>
+
+<style>
+
+</style>
+<script type="text/javascript" src="../../../src/res/js/dic.js">
+</script>
+<script is:inline>
+
+    function ranword(dict, tot){
+
+        const minCeiled = Math.ceil(1);
+        const maxFloored = Math.floor(10001);
+        var count = Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
+
+        var word = dict[count]
+        tot.innerHTML = ("there are " + word.length + " letters in this word and the first letter is: " + word[0])
+        return word;
+    }
+
+    linebreak = document.createElement("br");
+    const typ = document.getElementById("typing")
+    const msg = document.getElementById("message")
+    const tot = document.getElementById("total")
+    const life = document.getElementById("life")
+    var item = 0;
+
+    var word = ranword(dict, tot);
+
+    var key_list = "";
+
+    var full = word.length;
+
+    var full2 = full + 2
+
+    var left = ("guesses left: " + full2);
+
+    document.addEventListener(
+        "keydown",
+        function(event){
+            var current_key = event.key;
+            console.log('current_key: ',current_key);
+
+            if(current_key == word[item]){
+                key_list = key_list + current_key;
+                item++;
+                console.log('key_list: ',key_list);
+                var msgs = "right letter!";
+                full2++;
+                left = ("guesses left: " + full2);
+            }
+            else{
+                var msgs = "sorry wrong letter";
+                full2 = full2 - 1
+                left = ("guesses left: " + full2);
+            }
+            if(key_list == word){
+                var msgs = ("omg you did it yayyy, start typing again for a new letter!");
+                item = 0;
+
+                word = ranword(dict, tot);
+                full2 = word.length + 2;
+                key_list = "";
+                left = ("guesses left: " + full2);
+                
+            }
+            if(full2 <= 0){
+                var msgs = ("sorry you didnt get it, the word was: " + word + " better luck next time!");
+
+                item = 0;
+                word = ranword(dict, tot);
+                full2 = word.length + 2;
+                key_list = "";
+                left = ("guesses left: " + full2);
+            }
+
+            typ.innerHTML = key_list;
+            msg.innerHTML = msgs;
+            life.innerHTML = left
+        },
+    );
+
+</script>
