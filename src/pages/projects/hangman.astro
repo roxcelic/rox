@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import "../../res/js/dic";
 ---
 
 <Layout title="spotify">
@@ -17,41 +16,45 @@ import "../../res/js/dic";
 <style>
 
 </style>
+<script>
 </script>
-<script is:inline>
+<script>
+    import { array } from './dic.js'
+    let dict = array
+
+    console.log(dict)
 
     function ranword(dict, tot){
 
         const minCeiled = Math.ceil(1);
         const maxFloored = Math.floor(10001);
-        var count = Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
+        let count = Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
 
-        var word = dict[count]
+        let word = dict[count]
         tot.innerHTML = ("there are " + word.length + " letters in this word and the first letter is: " + word[0])
         return word;
     }
 
-    linebreak = document.createElement("br");
     const typ = document.getElementById("typing")
     const msg = document.getElementById("message")
     const tot = document.getElementById("total")
     const life = document.getElementById("life")
-    var item = 0;
+    let item = 0;
 
-    var word = ranword(dict, tot);
+    let word = ranword(dict, tot);
 
-    var key_list = "";
+    let key_list = "";
 
-    var full = word.length;
+    let full = word.length;
 
-    var full2 = full + 2
+    let full2 = full + 2
 
-    var left = ("guesses left: " + full2);
+    let left = ("guesses left: " + full2);
 
     document.addEventListener(
         "keydown",
         function(event){
-            var current_key = event.key;
+            let current_key = event.key;
             console.log('current_key: ',current_key);
 
             if(current_key == word[item]){

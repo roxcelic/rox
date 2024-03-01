@@ -1,4 +1,4 @@
-const dict = [
+export const array = [
     "a",
     "aa",
     "aaa",
@@ -9999,4 +9999,4 @@ const dict = [
     "zu",
     "zum",
     "zus"
-]
+];
