@@ -54,32 +54,41 @@ import Blog from '../components/blog.astro';
     	list-style-type: none;
 	}
 </style>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" is:inline></script>
 <script is:inline type="text/javascript">
-    function item_hover(description, ids){
-        document.getElementById(ids).innerHTML = description
+    // Create a function to handle the mouseover and mouseleave events
+function item_hover(description, ids) {
+    document.getElementById(ids).innerHTML = description;
+}
+
+function compare(a, b) {
+    if (a.watchers > b.watchers) {
+        return -1
+    }
+    if (a.watchers < b.watchers) {
+        return 1
+    }
+        return 0
     }
 
-    user = 'roxcelic'
-    apirepo = `https://api.github.com/users/${user}`
+// Define the GitHub username
+const user = 'roxcelic';
 
-    listrepos = document.createElement('a')
-    document.getElementById('github').appendChild(listrepos)
-    $.getJSON(apirepo + '/repos', function (data) {
+// Construct the API URL for the user's repositories
+const apirepo = `https://api.github.com/users/${user}`;
 
-        function compare(a, b) {
-            if (a.watchers > b.watchers) {
-                return -1
-            }
-            if (a.watchers < b.watchers) {
-                return 1
-            }
-            return 0
-        }
+// Create a container for the repositories
+const listrepos = document.createElement('div');
 
-        data.sort(compare)
+// Fetch the repository data using the fetch API
+fetch(apirepo + '/repos')
+    .then(response => response.json())
+    .then(data => {
+        // Sort the data using the 'compare' function
+        data.sort(compare);
+
+        // Iterate over each repository in the data
         data.forEach(v => {
-
+            // Create a div for each repository
             listItemRepo = document.createElement('div');
             listrepos.appendChild(listItemRepo);
             listItemRepo.className = "boxL";
@@ -87,15 +96,22 @@ import Blog from '../components/blog.astro';
             lhref = document.createElement('a');
             listItemRepo2.id = `${v.name}`;
             lhref.style.color = 'white';
-            listItemRepo2.appendChild(lhref);
-            listItemRepo.appendChild(listItemRepo2);
-            lhref.textContent = `${v.name}`;
+            lhref.appendChild(listItemRepo2);
+            listItemRepo.appendChild(lhref);
+            listItemRepo2.textContent = `${v.name}`;
             lhref.href = v.html_url;
 
             listItemRepo.addEventListener("mouseover",() =>  item_hover(`${v.description}`, `${v.name}`))
             listItemRepo.addEventListener("mouseleave",() =>  item_hover(`${v.name}`, `${v.name}`))
-        })
+        });
+
+        // Append the container to the DOM (assuming you have an element with id 'github')
+        document.getElementById('github').appendChild(listrepos);
     })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+    });
+
 </script>
 <style>
 
