@@ -55,7 +55,6 @@ import Blog from '../components/blog.astro';
 	}
 </style>
 <script is:inline type="text/javascript">
-    // Create a function to handle the mouseover and mouseleave events
 function item_hover(description, ids) {
     document.getElementById(ids).innerHTML = description;
 }
@@ -70,25 +69,18 @@ function compare(a, b) {
         return 0
     }
 
-// Define the GitHub username
 const user = 'roxcelic';
 
-// Construct the API URL for the user's repositories
 const apirepo = `https://api.github.com/users/${user}`;
 
-// Create a container for the repositories
 const listrepos = document.createElement('div');
 
-// Fetch the repository data using the fetch API
 fetch(apirepo + '/repos')
     .then(response => response.json())
     .then(data => {
-        // Sort the data using the 'compare' function
         data.sort(compare);
 
-        // Iterate over each repository in the data
         data.forEach(v => {
-            // Create a div for each repository
             listItemRepo = document.createElement('div');
             listrepos.appendChild(listItemRepo);
             listItemRepo.className = "boxL";
@@ -105,7 +97,6 @@ fetch(apirepo + '/repos')
             listItemRepo.addEventListener("mouseleave",() =>  item_hover(`${v.name}`, `${v.name}`))
         });
 
-        // Append the container to the DOM (assuming you have an element with id 'github')
         document.getElementById('github').appendChild(listrepos);
     })
     .catch(error => {
