@@ -1,0 +1,75 @@
+---
+import Layout from '../../layouts/bot.astro';
+---
+
+<Layout title="bot">
+	<main>
+		<h2>
+			<div class="content">
+        		<div class="roundThing2"></div>
+				<div class="texts">
+					rocks - my awesome bot - it might do somthing cool eventually, who knows?
+				</div>
+			</div>
+			<div class="content2">
+				currently my bot lacks a lot of any functionality and is just a very generic discord bot. It probably wont be online
+				half the time either, thats because i dont have a host yet but i plan to get a raspberry pi soon enough. Anyway enjoy!
+				<h2>the commands are:</h2>
+				<div class="drink">
+					<ul>
+						<li><h3>/ping</h3></li>
+						<li><h3>/usr</h3></li>
+						<li><h3>/server</h3></li>
+					</ul>
+				</div>
+				anyway It will probably be receiving updates soon<br>
+				and you can invite it to your discord server <a href="https://discord.com/oauth2/authorize?client_id=1213580875124572230&permissions=8&scope=bot">here.</a>
+			</div>
+		</h2>
+	</main>
+</Layout>
+<style>
+	ul {
+    	list-style-type:disc;
+		color: white;
+    	margin: 0%;
+		margin-left: 5%;
+    	padding: 0;
+		width: 100px;
+	}
+	.drink{
+		display: flex;
+		margin-left: 7.5%;
+	}
+	.content{
+		width: 90%;
+		margin-left: 5%;
+		display: flex;
+		margin-top: 5%;
+		margin-bottom: 5%;
+	}
+	.content2{
+		margin-top: 5%;
+		width: 90%;
+		margin-left: 5%;
+	}
+	.roundThing2{
+        height: 100px;
+        width: 100px;
+        background-color: pink;
+        background-image: url('../../images/pfp.jpg');
+        background-size: cover;
+        border-radius: 5%;
+        display: flexbox;
+        margin: 1%;
+		margin-left: 10%;
+    }
+	.texts{
+		padding-top: 30px;
+		margin-left: 5%;
+		display: inline-block;
+	}
+</style>
+<script is:inline>
+    
+</script>

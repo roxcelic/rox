@@ -1,0 +1,41 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+import Box from '../components/Card.astro';
+import Bar from '../components/bar.astro';
+import '../res/css/style.css';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="the worlds coolest website (because it was made by me)" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/157179472?v=4">
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Box
+			{title}
+		/>
+		<div class="mainBox">
+			<a href="https://github.com/roxcelic">
+			</a>
+			<slot />
+		</div>
+		<Bar
+			{title}
+		/>
+	</body>
+</html>
+<style is:global>
+	body{
+		margin: 0;
+    	padding: 0;
+	}
+</style>
