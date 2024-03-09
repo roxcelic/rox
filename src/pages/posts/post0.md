@@ -3,7 +3,7 @@ layout: ../../layouts/MarkdownPostLayout.astro
 title: 'the real future'
 pubDate: 2024.23.02
 desc: 'The future of my epic gaming'
-author: 'roxanne angel song'
+author: 'roxanne angel-grist'
 credits: 
 ---
 hey!

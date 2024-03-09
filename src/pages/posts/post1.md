@@ -3,7 +3,7 @@ layout: ../../layouts/MarkdownPostLayout.astro
 title: 'a re-post of old blogs!'
 pubDate: 2024.26.02
 desc: 'a re-release of old blog posts'
-author: 'roxanne angel song'
+author: 'roxanne angel-grist'
 credits: 
 ---
 <h6>old posts reposted!</h6>

@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+const allPosts = await Astro.glob('../pages/story/*.md');
+import BlogPost from '../components/blog.astro';
+---
+
+<Layout title="me.">
+	<main>
+        <h2 id="curr">
+
+        </h2>
+        <h2 id="song">
+            this page will be used for my socials or my school stuff, just kinda me. and if im listening to anything itll show up here so
+        </h2>
+        <div class="lineline"></div>
+        <h2>
+            hey so if your here youll wanna hear about me, roxie. I like to think im pretty cool but theres not much evidence for that
+            im pretty average by most accounts but to me I know theres a lot I can do and I hope I can show you that too, so please
+            have fun (:
+        </h2>
+        <div class="lineline"></div>
+        <h2>
+            since you all know im almost done with school, ive got my final exam dates and so here they are:<br><br>
+
+            Fri 10/05/2024 - 9:30 - 75 mins - combine science trillogy Biology P1H<br><br>
+
+            Mon 13/05/2024 - 09:30 - 105 mins - English Literature Paper 1<br>
+            Wed 15/05/2024 - 13:30 - 90 mins - Principle of Comp.sci<br>
+            Thu 16/05/2024 - 09:30 - 90 mins - Mathamatics paper 1 Tier H<br>
+            Fri 17/05/2024 - 09:30 - 75 mins - combined Science trillogy chemestry P!H<br><br>
+
+            Mon 20/05/2024 - 09:30 - 135 mins - English lit Paper 2<br>
+            Tue 21/05/2024 - 13:30 - 120 mins - Application comp. thinking<br>
+            Wed 22/05/2024 - 09:30 - 75 mins - combined Science trillogy Physicis P1H<br>
+            Thu 23/05/2024 - 09:30 - 105 mins - English language paper 1<br><br>
+
+            Mon 03/06/2024 - 09:30 - 90 mins - Mathamatics Paper 2 Tier H<br>
+            Thu 06/06/2024 - 09:30 - 105 mins - English language paper 2<br>
+            Fri 07/06/2024 - 13:30 - 75 mins - combined science trillogy Biology P2H<br><br>
+
+            Mon 10/06/2024 - 09:30 - 90 mins - Mathamatics Paper 3<br>
+            Tue 11/06/2024 - 09:30 - 75 mins - combined science trillogy chemestry P2H<br>
+            Fri 14/06/2024 - 13:30 - 75 mins - combined science trillogy Physicis P2H<br><br>
+
+            Mon 17/06/2024 - 13:30 - 90 mins - Music written paper<br>
+        </h2>
+        <div class="lineline"></div>
+
+        <div class="boxL" onmouseover="item_hover('I made a countdown using javascript, this was my first project in js','item0')" onmouseleave="item_hover('The coundown until i finnaly get to leave school (officially)','item0')">
+            <a href="/projects/free">
+                <h2 id="item0">The coundown until i finnaly get to leave school (officially)</h2>
+            </a>    
+        </div>
+
+        <div class="lineline"></div>
+
+        <h2>
+            i think im gonna start writing some short storys so watch out for them here ^^
+            {allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} dates={post.frontmatter.pubDate} desc={post.frontmatter.desc} />)}
+        </h2>
+
+        <div class="lineline"></div>
+
+        <h4>
+            what are you planning to do next?
+        </h4>
+        <h2>
+            i think im going to focus on me for a while, to feel more comfortable with myself but ill still be updating here, cause its fun
+        </h2>
+
+        <div class="lineline"></div>
+        <h4>socials!</h4>
+        <h2>
+            <a href="">
+                discord - roxcelic #0001
+            </a>
+        </h2>
+        <h2>
+            <a href="https://github.com/roxcelic">
+                github - roxcelic
+            </a>
+        </h2>
+        <h2>
+            <a href="https://open.spotify.com/user/onyc3nppnjac08vatfd8uulav">
+                spotify - roxie
+            </a>
+        </h2>
+	</main>
+</Layout>
+
+<style>
+
+</style>
+<script is:inline type="text/javascript">
+    //variables
+    const userName = 'roxcelic';
+
+	const apiKey = '3dcf918393b09a296cdf261dea478a1f';
+
+	let song = document.getElementById("song");
+
+    let curr = document.getElementById("curr");
+
+    //text stuff
+    function item_hover(description, ids) {
+        document.getElementById(ids).innerHTML = description;
+    }
+
+    //song data!
+    let x = setInterval(function(){
+		fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=${userName}&api_key=${apiKey}&format=json`)
+  			.then(response => response.json())
+  			.then(data => {
+    		const track = data.recenttracks.track[0];
+    		if (track['@attr'] && track['@attr']['nowplaying']) {
+      			const songName = track.name;
+      			const artistName = track.artist['#text'];
+      			console.log(`Currently playing: ${songName} by ${artistName}`);
+				song.innerHTML = (`${songName} - ${artistName}`);
+                curr.innerHTML = ('roxie is currently listening to:')
+    		} else {
+      			console.log('Not currently playing any track.');
+				song.innerHTML = ('this page will be used for my socials or my school stuff, just kinda me. and if im listening to anything itll show up here so');
+                curr.innerHTML = ('')
+    		}
+  		})
+  		.catch(error => {
+    		console.error('Error fetching data from Last.fm:', error);
+  		});
+	},5000);
+
+</script>
+<style>
+    .lineline{
+        left: 10%;
+        margin: 1%;
+        display: inline-block;
+        height: 2.5px;
+        width: 80%;
+        background-color: white;
+    }
+</style>

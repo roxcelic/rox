@@ -1,6 +1,22 @@
+a:link {
+    color: green;
+}
+  
+a:visited {
+    color: lightgreen;
+}
+  
+a:hover {
+    color: hotpink;
+}
+  
+a:active {
+    color: blue;
+} 
+
 html{
     background-color: pink;
-    background-image: url('../../../images/wall.jpg');
+    background-image: url('../../../public/images/wall.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100%;
@@ -15,6 +31,17 @@ body::after {
     height: 100vh;
     pointer-events: none;
     background: repeating-linear-gradient(0deg, rgba(0, 0, 0, .25), rgba(0, 0, 0, .25) 1px, transparent 2px, transparent 3px);
+}
+.roundThing2{
+    height: 75px;
+    width: 75px;
+    background-color: pink;
+    background-size: cover;
+    border-radius: 50%;
+    display: inline-flex;
+    margin-right: 50px;
+    margin-left: 15%;
+    margin: 1%;
 }
 
 /*this is the text*/
@@ -80,27 +107,6 @@ ul {
     margin: 0;
     padding: 0;
 }
-
-.boxL{
-    display: inline-block;
-    position: relative;
-    top: 100%;
-    width: 99.7%;
-    border: 3px solid rgb(245, 122, 169);
-    background-color: rgba(255, 0, 0, 0.5);
-    opacity: 0.5;
-    margin: 0%;
-}
-.boxL:hover{
-    display: inline-block;
-    position: relative;
-    top: 100%;
-    width: 99.7%;
-    border: 3px solid rgb(245, 122, 169);
-    background-color: rgba(255, 0, 0, 0.5);
-    opacity: 1;
-    margin: 0%;
-}
 .menuR{
     flex-wrap: wrap;
 }
@@ -117,6 +123,7 @@ ul {
     background-color: rgba(255, 0, 0, 0.5);
     opacity: 0.5;
     display: inline-block;
+    border-radius: 15px;
 }
 .boxR:hover{
     opacity: 1;
@@ -135,6 +142,66 @@ ul {
 }
 .timer2 div{
     flex-basis: 100%;
+}
+.boxL{
+    display: inline-block;
+    position: relative;
+    top: 100%;
+    width: 94.7%;
+    border: 3px solid rgb(245, 122, 169);
+    background-color: rgba(255, 0, 0, 0.5);
+    opacity: 0.5;
+    margin-bottom: 1.5%;
+    border-radius: 15px;
+}
+.boxL:hover{
+    display: inline-block;
+    position: relative;
+    top: 100%;
+    width: 99.7%;
+    border: 3px solid rgb(245, 122, 169);
+    background-color: rgba(255, 0, 0, 0.5);
+    opacity: 1;
+    margin-bottom: 1.5%;
+    border-radius: 15px;
+}
+
+@media (any-pointer: coarse) {
+    .boxL{
+        display: inline-block;
+        position: relative;
+        top: 100%;
+        width: 94.7%;
+        border: 3px solid rgb(245, 122, 169);
+        background-color: rgba(255, 0, 0, 0.5);
+        opacity: 1;
+        margin-bottom: 1.5%;
+        border-radius: 15px;
+    }
+    .boxL:hover{
+        display: inline-block;
+        position: relative;
+        top: 100%;
+        width: 99.7%;
+        border: 3px solid rgb(245, 122, 169);
+        background-color: rgba(255, 0, 0, 0.5);
+        opacity: 1;
+        margin-bottom: 1.5%;
+        border-radius: 15px;
+    }
+    .boxR{
+        position:relative;
+        top: 100%;
+        width: 12.5%;
+        border: 3px solid rgb(245, 122, 169);
+        background-color: rgba(255, 0, 0, 0.5);
+        opacity: 1;
+        display: inline-block;
+        border-radius: 15px;
+    }
+    .boxR:hover{
+        opacity: 1;
+    }
 }
 
 @media (min-width: 50px) {
@@ -156,7 +223,7 @@ ul {
         width: 100%;
         height: 5rem;
         background-color: rgba(0, 0, 0, 0.5);
-        background-image: url("../../../public/images/wallpaper.jpg");
+        background-image: url("../../images/wallpaper.jpg");
     }
 
     /*this is the text*/
@@ -173,7 +240,7 @@ ul {
 
     h3{
         color: aliceblue;
-        font-size: x-small;
+        font-size: xx-small;
     }
 
     h4{
@@ -204,6 +271,7 @@ ul {
 }
 
 @media (min-width: 800px) {
+
     .bar{
         background-image: url("/images/why.png");
         background-repeat: repeat-x;
@@ -249,7 +317,7 @@ ul {
 
     h3{
         color: aliceblue;
-        font-size: small;
+        font-size: x-small;
     }
 
     h4{
@@ -295,7 +363,7 @@ ul {
 
     h3{
         color: aliceblue;
-        font-size: medium;
+        font-size: small;
     }
 
     h4{

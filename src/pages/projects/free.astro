@@ -6,9 +6,9 @@ import Layout from '../../layouts/Layout.astro';
 	<main>
 		<ul role="list">
             <!--this down is what you change-->
-            <h5>(this is a countdown until im free of that horrid place (school), i know hell is forever but wow)</h5>
+            <h5>this is a countdown until I get to leave school and be myself forever</h5>
             <h5>21/06/2024 or for you americans 06/21/2024</h5>
-            <h4 id="free">free me.</h4>
+            <h4 id="free">lets go home now<br> a countdown until the last second im legally obligated to go to high school</h4>
             <div class="timer">
                 <div>
                     <span><h4>days</h4></span>
@@ -31,7 +31,7 @@ import Layout from '../../layouts/Layout.astro';
                 <div>
                     <h2>
                         here is a countdown until the closest 'big' date<br>
-                        the dates are: 28/03/2024 - 15/04/2024 - 24/05/2024 - 03/06/2024 - 21/06/2024
+                        the dates are:<br> 28/03/2024 - 15/04/2024 - 24/05/2024 - 03/06/2024 - 21/06/2024
                     </h2>
                     <div class="timer">
                         <div>
@@ -57,6 +57,7 @@ import Layout from '../../layouts/Layout.astro';
     <script is:inline>
         let countDownDate = new Date(Date.UTC (2024, 5, 21, 14, 55, 0)).getTime();
         new Date(new Date().toLocaleString('en', {timeZone: 'America/New_York'}))
+        
         let x = setInterval(function(){
             let now = new Date().getTime();
             let distance = countDownDate - now;
