@@ -11,29 +11,31 @@ import Blog from '../components/blog.astro';
             <h2>below will be a list of my finished, or unfinished projects. Feel free to take a look!</h2>
         
             <h2>-a website page-</h2>
-            <div class="boxL" onmouseover="item_hover('this does the same thing as the python version, yet it is more accessable as it is on the web','item0')" onmouseleave="item_hover('my encryption format but in js and on my website!','item0')">
-                <a href="/projects/3/">
-                    <h2 id="item0">my encryption format but in js and on my website!</h2>
-                </a>              
-            </div>
-            <div class="boxL" onmouseover="item_hover('yeah no, it cant really do anything rn lmao','item1')" onmouseleave="item_hover('my super awesome (and definatly not useless) discord bot','item1')">
-                <a href="/projects/bot">
-                    <h2 id="item1">my super awesome (and definatly not useless) discord bot</h2>
-                </a>    
-            </div>
+            <a href="/projects/3/">
+                <div class="boxL" onmouseover="item_hover('this does the same thing as the python version, yet it is more accessable as it is on the web','item0')" onmouseleave="item_hover('my encryption format but in js and on my website!','item0')">
+                    <h2 id="item0">my encryption format but in js and on my website!</h2>              
+                </div>
+            </a>
+
+            <a href="/projects/bot">
+                <div class="boxL" onmouseover="item_hover('yeah no, it cant really do anything rn lmao','item1')" onmouseleave="item_hover('my super awesome (and definatly not useless) discord bot','item1')">
+                    <h2 id="item1">my super awesome (and definatly not useless) discord bot</h2>    
+                </div>
+            </a>
 
             <h2>-not a website page-</h2>
             
-            <div class="boxL" onmouseover="item_hover('here is the beta design for the player character','lez0')" onmouseleave="item_hover(' character design!','lez0')">
-                <a href="/images/player.png">
-                    <h2 id="lez0">character design!</h2>
-                </a>              
-            </div>
-            <div class="boxL" onmouseover="item_hover('here is an odd little animation of the player character I made! (shhhhhhhhhhh pg 13)','lez1')" onmouseleave="item_hover('an animation of the character!','lez1')">
-                <a href="/images/player.gif">
+            <a href="/images/player.png">
+                <div class="boxL" onmouseover="item_hover('here is the beta design for the player character','lez0')" onmouseleave="item_hover(' character design!','lez0')">
+                    <h2 id="lez0">character design!</h2>             
+                </div>
+            </a>
+
+            <a href="/images/player.gif">
+                <div class="boxL" onmouseover="item_hover('here is an odd little animation of the player character I made! (shhhhhhhhhhh pg 13)','lez1')" onmouseleave="item_hover('an animation of the character!','lez1')">
                     <h2 id="lez1">an animation of the character!</h2>
-                </a>              
-            </div>
+                </div>
+            </a>
             <h2><span id="repocount"></span> -github repositories-</h2>
             <div id="github"></div>
 	</main>
@@ -71,17 +73,17 @@ fetch(apirepo + '/repos')
         data.sort(compare);
 
         data.forEach(v => {
-            listItemRepo = document.createElement('div');
-            listrepos.appendChild(listItemRepo);
-            listItemRepo.className = "boxL";
-            listItemRepo2 = document.createElement('h2');
-            lhref = document.createElement('a');
-            listItemRepo2.id = `${v.name}`;
-            lhref.style.color = 'white';
-            lhref.appendChild(listItemRepo2);
-            listItemRepo.appendChild(lhref);
-            listItemRepo2.textContent = `${v.name}`;
+            let lhref = document.createElement('a');
             lhref.href = v.html_url;
+
+            let listItemRepo = document.createElement('div');
+            listrepos.appendChild(lhref)
+            lhref.appendChild(listItemRepo);
+            listItemRepo.className = "boxL";
+            let listItemRepo2 = document.createElement('h2');
+            listItemRepo2.id = `${v.name}`;
+            listItemRepo.appendChild(listItemRepo2);
+            listItemRepo2.textContent = `${v.name}`;
 
             listItemRepo.addEventListener("mouseover",() =>  item_hover(`${v.description}`, `${v.name}`))
             listItemRepo.addEventListener("mouseleave",() =>  item_hover(`${v.name}`, `${v.name}`))
