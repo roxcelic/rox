@@ -4,7 +4,7 @@ const allPosts = await Astro.glob('../pages/story/*.md');
 import BlogPost from '../components/blog.astro';
 ---
 
-<Layout title="me.">
+<Layout title="roxie!">
 	<main>
         <h2 id="curr">
 
@@ -46,18 +46,52 @@ import BlogPost from '../components/blog.astro';
         </h2>
         <div class="lineline"></div>
 
-        <div class="boxL" onmouseover="item_hover('I made a countdown using javascript, this was my first project in js','item0')" onmouseleave="item_hover('The coundown until i finnaly get to leave school (officially)','item0')">
-            <a href="/projects/free">
-                <h2 id="item0">The coundown until i finnaly get to leave school (officially)</h2>
-            </a>    
+        <h5>this is a countdown until I get to leave school and be myself forever</h5>
+        <h5>21/06/2024 or for you americans 06/21/2024</h5>
+
+        <h4 id="free">lets go home now<br> a countdown until the last second im legally obligated to go to high school</h4>
+
+        <div class="timer">
+            <div>
+                <span><h4>days</h4></span>
+                <h4><p id="days">00</p></h4>
+            </div>
+            <div>
+                <span><h4>hours</h4></span>
+                <h4><p id="hours">00</p></h4>
+            </div>
+            <div>
+                <span><h4>minutes</h4></span>
+                <h4><p id="minutes">00</p></h4>
+            </div>
+            <div>
+                <span><h4>seconds</h4></span>
+                <h4><p id="seconds">00</p></h4>
+            </div>
         </div>
 
-        <div class="lineline"></div>
-
-        <h2>
-            i think im gonna start writing some short storys so watch out for them here ^^
-            {allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} dates={post.frontmatter.pubDate} desc={post.frontmatter.desc} />)}
-        </h2>
+        <h5>this is a countdown until the next 'big' date, the dates are:</h5>
+        <h4>28/03/2024 - 15/04/2024 - 24/05/2024 - 03/06/2024 - 21/06/2024</h4>
+        <div class="timer2">
+            <div class="timer">
+                <div>
+                    <h4>days</h4>
+                    <h4><p id="days2">00</p></h4>
+                </div>
+                <div>
+                    <span><h4>hours</h4></span>
+                    <h4><p id="hours2">00</p></h4>
+                </div>
+                <div>
+                    <span><h4>minutes</h4></span>
+                    <h4><p id="minutes2">00</p></h4>
+                </div>
+                <div>
+                    <span><h4>seconds</h4></span>
+                    <h4><p id="seconds2">00</p></h4>
+                </div>
+            </div>
+        </div>
 
         <div class="lineline"></div>
 
@@ -84,6 +118,13 @@ import BlogPost from '../components/blog.astro';
             <a href="https://open.spotify.com/user/onyc3nppnjac08vatfd8uulav">
                 spotify - roxie
             </a>
+        </h2>
+        
+        <div class="lineline"></div>
+
+        <h2>
+            i think im gonna start writing some short storys so watch out for them here ^^
+            {allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} dates={post.frontmatter.pubDate} desc={post.frontmatter.desc} />)}
         </h2>
 	</main>
 </Layout>
@@ -128,6 +169,58 @@ import BlogPost from '../components/blog.astro';
     		console.error('Error fetching data from Last.fm:', error);
   		});
 	},5000);
+
+    let countDownDate = new Date(Date.UTC (2024, 5, 21, 14, 55, 0)).getTime();
+        new Date(new Date().toLocaleString('en', {timeZone: 'America/New_York'}))
+        
+        let x3 = setInterval(function(){
+            let now = new Date().getTime();
+            let distance = countDownDate - now;
+        
+            if (distance > 0){
+                let weeks = Math.floor(distance / (1000 * 60 * 60 * 24 * 7));
+                let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerHTML = days
+                document.getElementById("hours").innerHTML = hours
+                document.getElementById("minutes").innerHTML = minutes
+                document.getElementById("seconds").innerHTML = seconds
+            } if (distance = 0 || distance < 0){
+                document.getElementById("days").innerHTML = 0
+                document.getElementById("hours").innerHTML = 0
+                document.getElementById("minutes").innerHTML = 0
+                document.getElementById("seconds").innerHTML = 0
+                document.getElementById("free").innerHTML = ("IM FREE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+            }
+        },1000);
+
+        let countDownDate2 = new Date(Date.UTC (2024, 2, 28, 14, 55, 0)).getTime();
+        new Date(new Date().toLocaleString('en', {timeZone: 'America/New_York'}))
+        let x2 = setInterval(function(){
+            let now2 = new Date().getTime();
+            let distance = countDownDate2 - now2;
+        
+            if (distance > 0){
+                let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("days2").innerHTML = days
+                document.getElementById("hours2").innerHTML = hours
+                document.getElementById("minutes2").innerHTML = minutes
+                document.getElementById("seconds2").innerHTML = seconds
+            } if (distance = 0 || distance < 0){
+                document.getElementById("days2").innerHTML = 0
+                document.getElementById("hours2").innerHTML = 0
+                document.getElementById("minutes2").innerHTML = 0
+                document.getElementById("seconds2").innerHTML = 0
+                document.getElementById("free").innerHTML = ("finnaly I have a break, also ive probably forgotten to update this just now")
+            }
+        },1000);
 
 </script>
 <style>
