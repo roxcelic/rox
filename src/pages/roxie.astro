@@ -6,16 +6,6 @@ import BlogPost from '../components/blog.astro';
 
 <Layout title="roxie!">
 	<main>
-        <h2 id="curr"></h2>
-        <div class="block">
-            <a id="link">
-                <div class="image" id="image"></div>
-            </a>
-            <h2 id="song">
-                this page will be used for my socials or my school stuff, just kinda me. and if im listening to anything itll show up here so
-            </h2>
-        </div>
-        <div class="lineline"></div>
         <h2>
             hey so if your here youll wanna hear about me, roxie. I like to think im pretty cool but theres not much evidence for that
             im pretty average by most accounts but to me I know theres a lot I can do and I hope I can show you that too, so please
@@ -141,56 +131,10 @@ import BlogPost from '../components/blog.astro';
     }
 </style>
 <script is:inline type="text/javascript">
-    //variables
-    const userName = 'roxcelic';
-
-	const apiKey = '3dcf918393b09a296cdf261dea478a1f';
-
-    let urls = document.getElementById("link");
-
-    let images = document.getElementById("image");
-
-	let song = document.getElementById("song");
-
-    let curr = document.getElementById("curr");
-
     //text stuff
     function item_hover(description, ids) {
         document.getElementById(ids).innerHTML = description;
     }
-
-    //song data!
-    let x = setInterval(function(){
-		fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=${userName}&api_key=${apiKey}&format=json`)
-  			.then(response => response.json())
-  			.then(data => {
-    		let track = data.recenttracks.track[0];
-    		if (track['@attr'] && track['@attr']['nowplaying']) {
-                let url = track.url;
-                let image = track.image[3]['#text'];
-      			let songName = track.name;
-      			let artistName = track.artist['#text'];
-				song.innerHTML = (`${songName} - ${artistName}`);
-                curr.innerHTML = ('roxie is currently listening to:');
-                images.style.width="20vh";
-                images.style.height= "20vh";
-                images.style.backgroundImage=`url(${image})`;
-                images.style.border = "3px solid rgb(245, 122, 169)";
-                urls.href = (url);
-    		} else {
-      			console.log('Not currently playing any track.');
-				song.innerHTML = ('this page will be used for my socials or my school stuff, just kinda me. and if im listening to anything itll show up here so');
-                curr.innerHTML = ('')
-                images.style.width="0vh";
-                images.style.height= "0vh";
-                images.style.backgroundImage="";
-                images.style.border = "";
-    		}
-  		})
-  		.catch(error => {
-    		console.error('Error fetching data from Last.fm:', error);
-  		});
-	},1000);
 
     let countDownDate = new Date(Date.UTC (2024, 5, 21, 14, 55, 0)).getTime();
         new Date(new Date().toLocaleString('en', {timeZone: 'America/New_York'}))

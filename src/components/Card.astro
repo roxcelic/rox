@@ -9,7 +9,7 @@ const {} = Astro.props;
     <input type="checkbox" name="rGroup" value="1" id="r1"/>
         <div class="box2" id="box">
             <label class="end" for="r1">
-                <span class="material-icons md-light">list</span>
+                <span class="material-symbols-outlined">menu</span>
             </label>
 
             <div class="box">
@@ -31,7 +31,10 @@ const {} = Astro.props;
                 </h2>
             </div>
 
-            <button onclick="toggleClass()">Toggle Class</button>
+            <button onclick="toggleClass1()">Toggle Class</button>
+            <button onclick="toggleClass2()">Toggle Class2</button>
+
+            <h2>THIS WILL BE UPDATED TO LOOK LESS CLUNKY TRUST ME PLEASE</h2>
 
         </div>
 </div>
@@ -79,65 +82,43 @@ const {} = Astro.props;
 			console.error('Error fetching data from Last.fm:', error);
 	  	});
 	},1000);
+</script>
+<script is:inline>
+    function toggleClass2(){
+        document.documentElement.style.setProperty('--main-color', 'rgb(245, 122, 169)');
+        document.documentElement.style.setProperty('--alt-color', 'rgba(255, 0, 0, 0.5)');
+        document.documentElement.style.setProperty('--bgimage', "url('../../../public/images/wall.jpg')");
 
-    document.cookie = "main-color=rgb(245, 122, 169); expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/ SameSite=None";
-    document.cookie = "alt-color=rgba(25, 0, 0, 0.5)'; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/ SameSite=None";
-    document.cookie = "bgimage=url('../../../public/images/wall.jpg'); expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/ SameSite=None";
+        document.cookie = "maincolor=light; expires=Thu, 25 Dec 2025 12:00:00 UTC;";
+    }
+	function toggleClass1() {
 
-    let clickCount = 0;
+		document.documentElement.style.setProperty('--main-color', 'rgba(255, 0, 0, 0.5)');
+        document.documentElement.style.setProperty('--alt-color', 'rgba(25, 0, 0, 0.5)');
+        document.documentElement.style.setProperty('--bgimage', "url('../../../public/images/wall.jpg')");
 
-	function toggleClass() {
-
-        if (clickCount == 0){
-		    document.documentElement.style.setProperty('--main-color', 'rgba(255, 0, 0, 0.5)');
-            document.documentElement.style.setProperty('--alt-color', 'rgba(25, 0, 0, 0.5)');
-            document.documentElement.style.setProperty('--bgimage', "url('../../../public/images/wall.jpg')");
-
-            document.cookie = "main-color=rgba(255, 0, 0, 0.5); expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/ SameSite=None";
-            document.cookie = "alt-color=rgba(25, 0, 0, 0.5); expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/ SameSite=None";
-            document.cookie = "bgimage=url('../../../public/images/wall.jpg'); expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/ SameSite=None";
-        }
-        if (clickCount == 1){
-            document.documentElement.style.setProperty('--main-color', 'rgb(245, 122, 169)');
-            document.documentElement.style.setProperty('--alt-color', 'rgba(255, 0, 0, 0.5)');
-            document.documentElement.style.setProperty('--bgimage', "url('../../../public/images/wall.jpg')");
-
-            document.cookie = "main-color=rgb(245, 122, 169); expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/ SameSite=None";
-            document.cookie = "alt-color=rgba(25, 0, 0, 0.5); expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/ SameSite=None";
-            document.cookie = "bgimage=url('../../../public/images/wall.jpg'); expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/ SameSite=None";
-
-            clickCount = -1;
-        }
-        clickCount ++;
-
-        console.log(getCookie('main-color'));
-        console.log(getCookie('alt-color'));
-        console.log(getCookie('bgimage'));
-        console.log("new");
+        document.cookie = "maincolor=dark; expires=Thu, 25 Dec 2025 12:00:00 UTC;";
 	}	
 
     function applySavedTheme() {
         console.log(getCookie('main-color'));
-        console.log(getCookie('alt-color'));
-        console.log(getCookie('bgimage'));
         
-        const maincolor = getCookie('main-color');
-        const altcolor = getCookie('alt-color');
-        const bgimage = getCookie('bgimage');
-
+        const maincolor = getCookie('maincolor');
 
         if (maincolor) {
-            document.documentElement.style.setProperty('--main-color', maincolor);
-        }
-        if (altcolor) {
-            document.documentElement.style.setProperty('--alt-color', altcolor);
-        }
-        if (bgimage) {
-            document.documentElement.style.setProperty('--bgimage', bgimage);
+            if (maincolor == "light"){
+                document.documentElement.style.setProperty('--main-color', 'rgb(245, 122, 169)');
+                document.documentElement.style.setProperty('--alt-color', 'rgba(255, 0, 0, 0.5)');
+                document.documentElement.style.setProperty('--bgimage', "url('../../../public/images/wall.jpg')");
+            }
+            if (maincolor == "dark"){
+                document.documentElement.style.setProperty('--main-color', 'rgba(255, 0, 0, 0.5)');
+                document.documentElement.style.setProperty('--alt-color', 'rgba(25, 0, 0, 0.5)');
+                document.documentElement.style.setProperty('--bgimage', "url('../../../public/images/wall.jpg')");
+            }
         }
     }
 
-    // Helper function to read cookies
     function getCookie(name) {
         const value = `; ${document.cookie}`;
         const parts = value.split(`; ${name}=`);
