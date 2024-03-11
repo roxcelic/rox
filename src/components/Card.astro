@@ -1,49 +1,148 @@
 ---
 interface Props {
-	title: string;
+
 }
 
-const {title} = Astro.props;
+const {} = Astro.props;
 ---
+<div id="checkboxes">
+    <input type="checkbox" name="rGroup" value="1" id="r1"/>
+        <div class="box2" id="box">
+            <label class="end" for="r1">
+                <span class="material-icons md-light">list</span>
+            </label>
 
-<div class="box">
-    <a href="/"><h3>home</h3></a>
-    <div class="vertical-row"></div><a href="/blog/"><h3>blog</h3></a>
-    <div class="vertical-row"></div><a href="/projects/"><h3>projects</h3></a>
-    <div class="vertical-row"></div><a href="/roxie/"><h3>roxie!</h3></a>
+            <div class="box">
+                <a href="/"><h3>home</h3></a>
+                <div class="vertical-row"></div><a href="/blog/"><h3>blog</h3></a>
+                <div class="vertical-row"></div><a href="/projects/"><h3>projects</h3></a>
+                <div class="vertical-row"></div><a href="/roxie/"><h3>roxie!</h3></a>
+            </div>
+
+            <div class="box">
+                <a><h3></h3></a>
+            </div>
+
+            <h2 id="curr"></h2>
+            <div class="block">
+                <a id="link"><div class="image" id="image"></div></a>
+                <h2 id="song">
+                    roxie is currently not listening too or watching anything
+                </h2>
+            </div>
+
+            <button onclick="toggleClass()">Toggle Class</button>
+
+        </div>
 </div>
 
-<style>
-	.box{
-        display: block;
-		text-align: center;
-        position: relative;
-        margin-top: 5%;
-        width: 79%;
-		left: 9%;
-        border: 3px solid rgb(245, 122, 169);
-        background-color: rgba(255, 0, 0, 0.5);
+<script is:inline>
+	const userName = 'roxcelic';
+
+	const apiKey = '3dcf918393b09a296cdf261dea478a1f';
+
+	let urls = document.getElementById("link");
+
+	let images = document.getElementById("image");
+
+	let song = document.getElementById("song");
+
+	let curr = document.getElementById("curr");
+
+	let x = setInterval(function(){
+		fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=${userName}&api_key=${apiKey}&format=json`)
+		  	.then(response => response.json())
+		  	.then(data => {
+				let track = data.recenttracks.track[0];
+				if (track['@attr'] && track['@attr']['nowplaying']) {
+				let url = track.url;
+				let image = track.image[3]['#text'];
+			  	let songName = track.name;
+			  	let artistName = track.artist['#text'];
+				song.innerHTML = (`${songName} - ${artistName}`);
+				curr.innerHTML = ('roxie is currently listening to:');
+				images.style.width="3vh";
+				images.style.height= "3vh";
+				images.style.backgroundImage=`url(${image})`;
+				images.style.border = "3px solid rgb(245, 122, 169)";
+				urls.href = (url);
+			} else {
+				song.innerHTML = ('roxie is currently not listening too or watching anything');
+				curr.innerHTML = ('')
+				images.style.width="0vh";
+				images.style.height= "0vh";
+				images.style.backgroundImage="";
+				images.style.border = "";
+			}
+	  	})
+	  	.catch(error => {
+			console.error('Error fetching data from Last.fm:', error);
+	  	});
+	},1000);
+
+    document.cookie = "main-color=rgb(245, 122, 169); expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/ SameSite=None";
+    document.cookie = "alt-color=rgba(25, 0, 0, 0.5)'; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/ SameSite=None";
+    document.cookie = "bgimage=url('../../../public/images/wall.jpg'); expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/ SameSite=None";
+
+    let clickCount = 0;
+
+	function toggleClass() {
+
+        if (clickCount == 0){
+		    document.documentElement.style.setProperty('--main-color', 'rgba(255, 0, 0, 0.5)');
+            document.documentElement.style.setProperty('--alt-color', 'rgba(25, 0, 0, 0.5)');
+            document.documentElement.style.setProperty('--bgimage', "url('../../../public/images/wall.jpg')");
+
+            document.cookie = "main-color=rgba(255, 0, 0, 0.5); expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/ SameSite=None";
+            document.cookie = "alt-color=rgba(25, 0, 0, 0.5); expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/ SameSite=None";
+            document.cookie = "bgimage=url('../../../public/images/wall.jpg'); expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/ SameSite=None";
+        }
+        if (clickCount == 1){
+            document.documentElement.style.setProperty('--main-color', 'rgb(245, 122, 169)');
+            document.documentElement.style.setProperty('--alt-color', 'rgba(255, 0, 0, 0.5)');
+            document.documentElement.style.setProperty('--bgimage', "url('../../../public/images/wall.jpg')");
+
+            document.cookie = "main-color=rgb(245, 122, 169); expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/ SameSite=None";
+            document.cookie = "alt-color=rgba(25, 0, 0, 0.5); expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/ SameSite=None";
+            document.cookie = "bgimage=url('../../../public/images/wall.jpg'); expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/ SameSite=None";
+
+            clickCount = -1;
+        }
+        clickCount ++;
+
+        console.log(getCookie('main-color'));
+        console.log(getCookie('alt-color'));
+        console.log(getCookie('bgimage'));
+        console.log("new");
+	}	
+
+    function applySavedTheme() {
+        console.log(getCookie('main-color'));
+        console.log(getCookie('alt-color'));
+        console.log(getCookie('bgimage'));
+        
+        const maincolor = getCookie('main-color');
+        const altcolor = getCookie('alt-color');
+        const bgimage = getCookie('bgimage');
+
+
+        if (maincolor) {
+            document.documentElement.style.setProperty('--main-color', maincolor);
+        }
+        if (altcolor) {
+            document.documentElement.style.setProperty('--alt-color', altcolor);
+        }
+        if (bgimage) {
+            document.documentElement.style.setProperty('--bgimage', bgimage);
+        }
     }
-    .vertical-row {
-        left: 25%;
-        display: inline-block;
-        height: 10px;
-        width: 1.5px;
-        background-color: white;
-    } 
-    .title{
-        justify-content: center;
-        text-align: center;
-        font-size: 2rem;
-        color: white;
-        padding-top: 2.5%;
+
+    // Helper function to read cookies
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
     }
-    .txt{
-        color: aliceblue;
-        font-size: 0.6rem;
-        text-align: center;
-        display: inline;
-        padding: 3%;
-        margin-bottom: 4%;
-    }
-</style>
+
+applySavedTheme();
+</script>

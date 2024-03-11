@@ -4,9 +4,10 @@ interface Props {
 }
 
 const { title } = Astro.props;
-import Box from '../components/Card.astro';
 import Bar from '../components/bar.astro';
+import Box from '../components/Card.astro';
 import '../res/css/style.css';
+import '../res/js/set.js';
 ---
 
 <!doctype html>
@@ -16,14 +17,16 @@ import '../res/css/style.css';
 		<meta name="description" content="the worlds coolest website (because it was made by me)" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/157179472?v=4">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
 		<Box
-			{title}
+
 		/>
-		<div class="mainBox">
+		<div class="mainBox" id="mainBox">
 			<div class="pictureBox"></div>
 			<a href="https://github.com/roxcelic">
 				<div class="roundThing"></div>

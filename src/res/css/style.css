@@ -1,3 +1,36 @@
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+
+:root {
+    --main-color: rgb(245, 122, 169);
+    --alt-color: rgba(255, 0, 0, 0.5);
+    --bgimage: url('../../../public/images/wall.jpg');
+  }
+
 a:link {
     color: green;
 }
@@ -16,12 +49,13 @@ a:active {
 
 html{
     background-color: pink;
-    background-image: url('../../../public/images/wall.jpg');
+    background-image: var(--bgimage);
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100%;
     min-width: 100%
 }
+
 body::after {
     content: "";
     position: fixed;
@@ -97,8 +131,8 @@ h6{
     margin-top: 3vh;
     width: 79%;
     left: 9%;
-    border: 3px solid rgb(245, 122, 169);
-    background-color: rgba(255, 0, 0, 0.5);
+    border: 3px solid var(--main-color);
+    background-color: var(--alt-color);
     list-style-type: none;
 }
 
@@ -119,8 +153,8 @@ ul {
     position:relative;
     top: 100%;
     width: 12.5%;
-    border: 3px solid rgb(245, 122, 169);
-    background-color: rgba(255, 0, 0, 0.5);
+    border: 3px solid var(--main-color);
+    background-color: var(--alt-color);
     opacity: 0.5;
     display: inline-block;
     border-radius: 15px;
@@ -148,8 +182,8 @@ ul {
     position: relative;
     top: 100%;
     width: 94.7%;
-    border: 3px solid rgb(245, 122, 169);
-    background-color: rgba(255, 0, 0, 0.5);
+    border: 3px solid var(--main-color);
+    background-color: var(--alt-color);
     opacity: 0.5;
     margin-bottom: 1.5%;
     border-radius: 15px;
@@ -159,11 +193,84 @@ ul {
     position: relative;
     top: 100%;
     width: 99.7%;
-    border: 3px solid rgb(245, 122, 169);
-    background-color: rgba(255, 0, 0, 0.5);
+    border: 3px solid var(--main-color);
+    background-color: var(--alt-color);
     opacity: 1;
     margin-bottom: 1.5%;
     border-radius: 15px;
+}
+
+.block{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.image{
+    height: 0px;
+    width: 0px;
+    background-size: contain;
+    display: inline-block;
+}
+#song{
+    display: inline-flexbox;
+}
+.box2{
+    display: block;
+    text-align: center;
+    position: relative;
+    margin-top: 5%;
+    width: 79%;
+    height: 2.5vh;
+    min-height: min-content;
+    left: 9%;
+    overflow: hidden;
+    border: 3px solid var(--main-color);
+    background-color: var(--alt-color);
+    transition: height 0.5s ease-in-out;
+}
+.vertical-row {
+    left: 25%;
+    display: inline-block;
+    height: 10px;
+    width: 1.5px;
+    background-color: white;
+} 
+.title{
+    justify-content: center;
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    padding-top: 2.5%;
+}
+.txt{
+    color: aliceblue;
+    font-size: 0.6rem;
+    text-align: center;
+    display: inline;
+    padding: 3%;
+    margin-bottom: 4%;
+}
+.end{
+    float: right;
+    display: inline-block;
+    margin-top: -2.5px;
+    
+}
+
+#checkboxes input[type="checkbox"] {
+    display: none;
+}
+
+#checkboxes input[type="checkbox"]:checked + #box {
+    display: block;
+    text-align: center;
+    position: relative;
+    margin-top: 5%;
+    width: 79%;
+    left: 9%;
+    height: 20vh;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
 }
 
 @media (any-pointer: coarse) {
@@ -172,8 +279,8 @@ ul {
         position: relative;
         top: 100%;
         width: 94.7%;
-        border: 3px solid rgb(245, 122, 169);
-        background-color: rgba(255, 0, 0, 0.5);
+        border: 3px solid var(--main-color);
+        background-color: var(--alt-color);
         opacity: 1;
         margin-bottom: 1.5%;
         border-radius: 15px;
@@ -183,8 +290,8 @@ ul {
         position: relative;
         top: 100%;
         width: 99.7%;
-        border: 3px solid rgb(245, 122, 169);
-        background-color: rgba(255, 0, 0, 0.5);
+        border: 3px solid var(--main-color);
+        background-color: var(--alt-color);
         opacity: 1;
         margin-bottom: 1.5%;
         border-radius: 15px;
@@ -193,8 +300,8 @@ ul {
         position:relative;
         top: 100%;
         width: 12.5%;
-        border: 3px solid rgb(245, 122, 169);
-        background-color: rgba(255, 0, 0, 0.5);
+        border: 3px solid var(--main-color);
+        background-color: var(--alt-color);
         opacity: 1;
         display: inline-block;
         border-radius: 15px;
