@@ -88,14 +88,14 @@ const {} = Astro.props;
         document.documentElement.style.setProperty('--main-color', 'rgb(245, 122, 169)');
         document.documentElement.style.setProperty('--alt-color', 'rgba(255, 0, 0, 0.5)');
 
-        document.cookie = "maincolor=light; expires=Thu, 25 Dec 2025 12:00:00 UTC;";
+        document.cookie = "maincolor=light; expires=Thu, 25 Dec 2025 12:00:00 UTC; SameSite=None;";
     }
 	function toggleClass1() {
 
 		document.documentElement.style.setProperty('--main-color', 'rgba(255, 0, 0, 0.5)');
         document.documentElement.style.setProperty('--alt-color', 'rgba(25, 0, 0, 0.5)');
 
-        document.cookie = "maincolor=dark; expires=Thu, 25 Dec 2025 12:00:00 UTC;";
+        document.cookie = "maincolor=dark; expires=Thu, 25 Dec 2025 12:00:00 UTC; SameSite=None;";
 	}	
 
     function applySavedTheme() {

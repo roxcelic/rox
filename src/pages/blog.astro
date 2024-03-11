@@ -16,7 +16,7 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 
             <!--hi i made this the blog list now so please dont delete this, thx <3-->
             <h4>welcome to the blog list</h4>
-    	{allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} dates={post.frontmatter.pubDate} desc={post.frontmatter.desc} />)}
+            {allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} dates={post.frontmatter.pubDate} desc={post.frontmatter.desc} />)}
 	</main>
 </Layout>
 
