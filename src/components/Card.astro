@@ -87,7 +87,6 @@ const {} = Astro.props;
     function toggleClass2(){
         document.documentElement.style.setProperty('--main-color', 'rgb(245, 122, 169)');
         document.documentElement.style.setProperty('--alt-color', 'rgba(255, 0, 0, 0.5)');
-        document.documentElement.style.setProperty('--bgimage', "url('../../../public/images/wall.jpg')");
 
         document.cookie = "maincolor=light; expires=Thu, 25 Dec 2025 12:00:00 UTC;";
     }
@@ -95,7 +94,6 @@ const {} = Astro.props;
 
 		document.documentElement.style.setProperty('--main-color', 'rgba(255, 0, 0, 0.5)');
         document.documentElement.style.setProperty('--alt-color', 'rgba(25, 0, 0, 0.5)');
-        document.documentElement.style.setProperty('--bgimage', "url('../../../public/images/wall.jpg')");
 
         document.cookie = "maincolor=dark; expires=Thu, 25 Dec 2025 12:00:00 UTC;";
 	}	
@@ -109,12 +107,10 @@ const {} = Astro.props;
             if (maincolor == "light"){
                 document.documentElement.style.setProperty('--main-color', 'rgb(245, 122, 169)');
                 document.documentElement.style.setProperty('--alt-color', 'rgba(255, 0, 0, 0.5)');
-                document.documentElement.style.setProperty('--bgimage', "url('../../../public/images/wall.jpg')");
             }
             if (maincolor == "dark"){
                 document.documentElement.style.setProperty('--main-color', 'rgba(255, 0, 0, 0.5)');
                 document.documentElement.style.setProperty('--alt-color', 'rgba(25, 0, 0, 0.5)');
-                document.documentElement.style.setProperty('--bgimage', "url('../../../public/images/wall.jpg')");
             }
         }
     }
