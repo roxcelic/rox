@@ -175,12 +175,16 @@ import BlogPost from '../components/blog.astro';
                 images.style.width="20vh";
                 images.style.height= "20vh";
                 images.style.backgroundImage=`url(${image})`;
-                images.style.color="";
+                images.style.border = "3px solid rgb(245, 122, 169)";
                 urls.href = (url);
     		} else {
       			console.log('Not currently playing any track.');
 				song.innerHTML = ('this page will be used for my socials or my school stuff, just kinda me. and if im listening to anything itll show up here so');
                 curr.innerHTML = ('')
+                images.style.width="0vh";
+                images.style.height= "0vh";
+                images.style.backgroundImage="";
+                images.style.border = "";
     		}
   		})
   		.catch(error => {
