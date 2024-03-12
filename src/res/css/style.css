@@ -8,13 +8,23 @@
     background-color: white;
 }
 
+/*this exists because blog posts refuse to conform to societal norms, just like mummy<3*/
+.boxs2{
+    display: inline-block;
+    position: relative;
+    margin-top: 3vh;
+    width: 300px;
+    background-color: transparent;
+}
+
 /*for my encryption page*/
 .boxs{
     display: inline-block;
     position: relative;
     margin-top: 3vh;
     width: 300px;
-    background-color: transparent;
+    border: 3px solid var(--main-color);
+    background-color: var(--alt-color);
 }
 .menus{
     justify-content: center;
