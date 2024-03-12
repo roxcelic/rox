@@ -1,12 +1,17 @@
 ---
 interface Props {
 	title: string;
+	hey: string;
 }
 
 const { title } = Astro.props;
+const { hey } = Astro.props;
 import Box from '../components/Card.astro';
 import Bar from '../components/bar.astro';
 import '../res/css/style.css';
+import '../res/css/base.css';
+import '../res/css/media.css';
+import '../res/js/set.js';
 ---
 
 <!doctype html>
@@ -22,7 +27,7 @@ import '../res/css/style.css';
 	</head>
 	<body>
 		<Box
-			
+			{hey}
 		/>
 		<slot />
 		<Bar

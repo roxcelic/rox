@@ -1,15 +1,15 @@
 ---
 interface Props {
-
+	hey: string;
 }
 
-const {} = Astro.props;
+const {hey} = Astro.props;
 ---
 <div id="checkboxes">
     <input type="checkbox" name="rGroup" value="1" id="r1"/>
         <div class="box2" id="box">
             <label class="end" for="r1">
-                <span class="material-symbols-outlined">menu</span>
+                <span class="material-symbols-outlined md">menu</span>
             </label>
 
             <div class="box">
@@ -23,19 +23,17 @@ const {} = Astro.props;
                 <a><h3></h3></a>
             </div>
 
+			<h2>{hey}</h2>
+			<div class="lineline"></div>
             <h2 id="curr"></h2>
             <div class="block">
-                <a id="link"><div class="image" id="image"></div></a>
-                <h2 id="song">
+				<h2 id="song">
                     roxie is currently not listening too or watching anything
-                </h2>
+				</h2>
+				<h2>
+                	<a id="link"><div class="image" id="image"></div></a>
+				</h2>
             </div>
-
-            <button onclick="toggleClass1()">Toggle Class</button>
-            <button onclick="toggleClass2()">Toggle Class2</button>
-
-            <h2>THIS WILL BE UPDATED TO LOOK LESS CLUNKY TRUST ME PLEASE</h2>
-
         </div>
 </div>
 
@@ -64,8 +62,8 @@ const {} = Astro.props;
 			  	let artistName = track.artist['#text'];
 				song.innerHTML = (`${songName} - ${artistName}`);
 				curr.innerHTML = ('roxie is currently listening to:');
-				images.style.width="3vh";
-				images.style.height= "3vh";
+				images.style.width="10vh";
+				images.style.height= "10vh";
 				images.style.backgroundImage=`url(${image})`;
 				images.style.border = "3px solid rgb(245, 122, 169)";
 				urls.href = (url);
@@ -82,44 +80,4 @@ const {} = Astro.props;
 			console.error('Error fetching data from Last.fm:', error);
 	  	});
 	},1000);
-</script>
-<script is:inline>
-    function toggleClass2(){
-        document.documentElement.style.setProperty('--main-color', 'rgb(245, 122, 169)');
-        document.documentElement.style.setProperty('--alt-color', 'rgba(255, 0, 0, 0.5)');
-
-        document.cookie = "maincolor=light; expires=Thu, 25 Dec 2025 12:00:00 UTC; SameSite=None;";
-    }
-	function toggleClass1() {
-
-		document.documentElement.style.setProperty('--main-color', 'rgba(255, 0, 0, 0.5)');
-        document.documentElement.style.setProperty('--alt-color', 'rgba(25, 0, 0, 0.5)');
-
-        document.cookie = "maincolor=dark; expires=Thu, 25 Dec 2025 12:00:00 UTC; SameSite=None;";
-	}	
-
-    function applySavedTheme() {
-        console.log(getCookie('main-color'));
-        
-        const maincolor = getCookie('maincolor');
-
-        if (maincolor) {
-            if (maincolor == "light"){
-                document.documentElement.style.setProperty('--main-color', 'rgb(245, 122, 169)');
-                document.documentElement.style.setProperty('--alt-color', 'rgba(255, 0, 0, 0.5)');
-            }
-            if (maincolor == "dark"){
-                document.documentElement.style.setProperty('--main-color', 'rgba(255, 0, 0, 0.5)');
-                document.documentElement.style.setProperty('--alt-color', 'rgba(25, 0, 0, 0.5)');
-            }
-        }
-    }
-
-    function getCookie(name) {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(';').shift();
-    }
-
-applySavedTheme();
 </script>

@@ -2,6 +2,9 @@
 const { frontmatter } = Astro.props;
 import Box from '../components/Card.astro';
 import '../res/css/style.css';
+import '../res/css/base.css';
+import '../res/css/media.css';
+import '../res/js/set.js';
 ---
 <!doctype html>
 <html lang="en">
@@ -16,7 +19,7 @@ import '../res/css/style.css';
     </head>
 
     <Box
-	    title={frontmatter.title}
+	    hey={frontmatter.desc}
     />
 
     <div class="mainBox">

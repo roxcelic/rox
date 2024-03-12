@@ -4,7 +4,7 @@ const allPosts = await Astro.glob('../pages/story/*.md');
 import BlogPost from '../components/blog.astro';
 ---
 
-<Layout title="roxie!">
+<Layout title="roxie!" hey='this is my page, my page and its all about me, yeah all about me'>
 	<main>
         <h2>
             hey so if your here youll wanna hear about me, roxie. I like to think im pretty cool but theres not much evidence for that
@@ -122,14 +122,6 @@ import BlogPost from '../components/blog.astro';
 	</main>
 </Layout>
 
-<style>
-    .image{
-        height: 0px;
-        width: 0px;
-        background-size: contain;
-        display: inline-block;
-    }
-</style>
 <script is:inline type="text/javascript">
     //text stuff
     function item_hover(description, ids) {
@@ -189,13 +181,3 @@ import BlogPost from '../components/blog.astro';
         },1000);
 
 </script>
-<style>
-    .lineline{
-        left: 10%;
-        margin: 1%;
-        display: inline-block;
-        height: 2.5px;
-        width: 80%;
-        background-color: white;
-    }
-</style>
