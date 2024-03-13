@@ -4,6 +4,7 @@
         --alt-color: rgba(25, 0, 0, 0.5);
         --bgimage: url("../../../public/images/wall.jpg");  
         --bgimage2: url("../../../public/images/why2.png"); 
+        --max-height: 0px;
         --font: white; 
         --default-background: pink;
     }
@@ -15,6 +16,7 @@
         --alt-color: rgba(255, 0, 0, 0.5);
         --bgimage: url("../../../public/images/wall-d.jpg"); 
         --bgimage2: url("../../../public/images/why.png");  
+        --max-height: 0px;
         --font: white; 
         --default-background: pink;
     }

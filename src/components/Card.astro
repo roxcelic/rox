@@ -38,6 +38,13 @@ const {hey} = Astro.props;
 </div>
 
 <script is:inline>
+	var body = document.body,
+    	html = document.documentElement;
+
+	let el = document.querySelector('.box2');
+	let height = el.scrollHeight;
+	el.style.setProperty('--max-height', height + 'px');
+
 	const userName = 'roxcelic';
 
 	const apiKey = '3dcf918393b09a296cdf261dea478a1f';
@@ -49,6 +56,10 @@ const {hey} = Astro.props;
 	let song = document.getElementById("song");
 
 	let curr = document.getElementById("curr");
+
+	var current = "";
+	var has = "";
+	var extra = 0;
 
 	let x = setInterval(function(){
 		fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=${userName}&api_key=${apiKey}&format=json`)
@@ -67,6 +78,10 @@ const {hey} = Astro.props;
 				images.style.backgroundImage=`url(${image})`;
 				images.style.border = "3px solid rgb(245, 122, 169)";
 				urls.href = (url);
+
+				/*height changer thing*/
+				current = "True";
+
 			} else {
 				song.innerHTML = ('roxie is currently not listening too or watching anything');
 				curr.innerHTML = ('')
@@ -74,10 +89,30 @@ const {hey} = Astro.props;
 				images.style.height= "0vh";
 				images.style.backgroundImage="";
 				images.style.border = "";
+
+				/*height changer thing*/
+				current = "False";
 			}
 	  	})
 	  	.catch(error => {
 			console.error('Error fetching data from Last.fm:', error);
 	  	});
+	},1000);
+
+	let x2 = setInterval(function(){
+		if(current == "True" && has != "True"){
+			var height2 = Math.max( body.scrollHeight, body.offsetHeight, 
+			html.clientHeight, html.scrollHeight, html.offsetHeight );
+
+			extra = height2 * 0.15;
+			height = height + extra;
+			has = "True";
+			el.style.setProperty('--max-height', height + 'px');
+		}
+		if(has == "True" && current == "False"){
+			height = height - extra;
+			has = "False";
+			el.style.setProperty('--max-height', height + 'px');
+		}
 	},1000);
 </script>
