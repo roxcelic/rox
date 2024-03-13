@@ -13,7 +13,7 @@
     :root {
         --main-color: rgb(245, 122, 169);
         --alt-color: rgba(255, 0, 0, 0.5);
-        --bgimage: url("../../../public/images/wall.jpg"); 
+        --bgimage: url("../../../public/images/wall-d.jpg"); 
         --bgimage2: url("../../../public/images/why.png");  
         --font: white; 
         --default-background: pink;
