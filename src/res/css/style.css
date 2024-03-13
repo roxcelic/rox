@@ -6,6 +6,8 @@
     height: 2.5px;
     width: 80%;
     background-color: white;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
 
 /*this exists because blog posts refuse to conform to societal norms, just like mummy<3*/
@@ -138,21 +140,6 @@
 #song{
     display: inline-flexbox;
 }
-/*the menu box*/
-.box2{
-    display: block;
-    text-align: center;
-    position: relative;
-    margin-top: 5%;
-    width: 79%;
-    height: 2.5vh;
-    min-height: min-content;
-    left: 9%;
-    overflow: hidden;
-    border: 3px solid var(--main-color);
-    background-color: var(--alt-color);
-    transition: height 0.5s ease-in-out;
-}
 /*the lil row between the menu items*/
 .vertical-row {
     left: 25%;
@@ -185,7 +172,32 @@
     display: inline-block;
     margin-top: -2.5px;
 }
-
+/*the menu box*/
+.box2{
+    animation-fill-mode: forwards;
+    display: block;
+    text-align: center;
+    position: relative;
+    margin-top: 5%;
+    width: 79%;
+    height: 2.5vh;
+    min-height: min-content;
+    left: 9%;
+    overflow: hidden;
+    border: 3px solid var(--main-color);
+    background-color: var(--alt-color);
+}
+/*the menu box*/
+.box2-a-{
+    animation-fill-mode: forwards;
+    display: block;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 2.5vh;
+    min-height: min-content;
+    overflow: hidden;
+}
 /*the actual dropdown itself*/
 #checkboxes input[type="checkbox"] {
     display: none;
@@ -198,7 +210,43 @@
     margin-top: 5%;
     width: 79%;
     left: 9%;
-    height: var(--max-height);
+    height: auto;
+    max-height: 100vh;
     overflow: hidden;
-    transition: height 0.5s ease-in-out;
+}
+
+#checkboxes input[type="checkbox"]:checked + #box2 {
+    display: block;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+/*animations*/
+@keyframes rainbow{
+    0%{background-color: rgb(255,0,0);}
+    8%{background-color: rgb(255,127,0);}
+    16%{background-color: rgb(255,255,0);}
+    25%{background-color: rgb(127,255,0);}
+    33%{background-color: rgb(0,255,0);}
+    41%{background-color: rgb(0,255,127);}
+    50%{background-color: rgb(0,255,255);}
+    58%{background-color: rgb(0,127,255);}
+    66%{background-color: rgb(0,0,255);}
+    75%{background-color: rgb(127,0,255);}
+    83%{background-color: rgb(255,0,255);}
+    91%{background-color: rgb(255,0,127);}
+    100%{background-color: rgb(255,0,0);}
+}
+
+@keyframes growHeight{
+    from{
+        height: 50px;
+    }
+    to{
+        max-height: fit-content;
+    }
 }

@@ -7,8 +7,7 @@ author: 'roxanne angel-grist'
 credits: 
 ---
 <h2>
-    since you all know im almost done with school, ive got my final exam dates and so here they are:
-
+    since you all know im almost done with school, ive got my final exam dates and so here they are:<br>
     (this is also not all my exams just the ones i was given on the sheet, so it doesnt have stuff like art)
 
     Fri 10/05/2024 - 9:30 - 75 mins - combine science trillogy Biology P1H
@@ -36,3 +35,6 @@ credits:
 <h4>
     also I might update this page as my exams go on to show which ones ive finished already
 </h4>
+<script>
+    console.log("hey");
+</script>
