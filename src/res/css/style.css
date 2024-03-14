@@ -6,8 +6,6 @@
     height: 2.5px;
     width: 80%;
     background-color: white;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
 }
 
 /*this exists because blog posts refuse to conform to societal norms, just like mummy<3*/
@@ -85,7 +83,6 @@
 }
 .boxL{
     display: inline-block;
-    position: relative;
     top: 100%;
     width: 94.7%;
     border: 3px solid var(--main-color);
@@ -96,7 +93,6 @@
 }
 .boxL:hover{
     display: inline-block;
-    position: relative;
     top: 100%;
     width: 99.7%;
     border: 3px solid var(--main-color);
@@ -131,14 +127,29 @@
 }
 /*the songs cover art*/
 .image{
-    height: 0px;
-    width: 0px;
+    height: 10vh;
+    width: 10vh;
     background-size: contain;
     display:inline-flex;
 }
 /*the song*/
 #song{
     display: inline-flexbox;
+}
+/*the menu box*/
+.box2{
+    display: block;
+    text-align: center;
+    position: relative;
+    margin-top: 5%;
+    width: 79%;
+    height: 2.5vh;
+    min-height: min-content;
+    left: 9%;
+    overflow: hidden;
+    border: 3px solid var(--main-color);
+    background-color: var(--alt-color);
+    transition: height 0.5s ease-in-out;
 }
 /*the lil row between the menu items*/
 .vertical-row {
@@ -171,37 +182,56 @@
     float: right;
     display: inline-block;
     margin-top: -2.5px;
+    animation-name: spin2;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
 }
-.wrapper {
-    display: grid;
-    grid-rows: 0fr;
-    transition: grid-template-rows 0.5s ease-out;
+.end2{
+    float: right;
+    display: inline-block;
+    margin-top: -2.5px;
+}
+.end:hover{
+    animation-name: spin;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+}
+/*the menu box*/
+.dropdown-box{
     animation-fill-mode: forwards;
     display: block;
     text-align: center;
     position: relative;
     margin-top: 5%;
     width: 79%;
-    height: 2.5vh;
     min-height: min-content;
     left: 9%;
-    overflow: hidden;
     border: 3px solid var(--main-color);
     background-color: var(--alt-color);
-  }
-  
-  .wrapper:hover{
-    grid-rows: 1fr;
+}
+
+.dropdown-view{
+    width: 100%;
     height: fit-content;
-    background-color: aqua;
-  }
-  
-  .inner {
+}
+.dropdown-content{
+    height: 0px;
+    width: 100%;
+    transition: height 0.3s ease-in-out;
     overflow: hidden;
-  }
-  
+}
 
 /*animations*/
+@keyframes spin{
+    0%{rotate: 0deg;}
+    100%{rotate: 180deg;}
+}
+@keyframes spin2{
+    0%{rotate: 180deg;}
+    100%{rotate: 360deg;}
+}
 @keyframes rainbow{
     0%{background-color: rgb(255,0,0);}
     8%{background-color: rgb(255,127,0);}

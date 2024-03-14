@@ -14,18 +14,16 @@ import BlogPost from '../components/blog.astro';
 
         <div class="lineline"></div>
 
-        <div id="checkboxes">
-            <input type="checkbox" name="rGroup" value="2" id="r2"/>
-                <div class="box2-a-" id="box2">
-                    <label class="end" for="r2">
-                        <span class="material-symbols-outlined md">expand_more</span>
-                    </label>
-        
-                    <div class="box">
-                        <h3>this is a countdown until I get to leave school and be myself forever</h3>
-                    </div>
-        
+        <div class="dropdown-regular">
+            <div class="dropdown-view">
+                <div class="end" onclick="getclickedboi('drop-timer')">
+                    <span class="material-symbols-outlined md">expand_more</span>
+                </div>
 
+                <div class="box">
+                    <h3>this is a countdown until I get to leave school and be myself forever</h3>
+                </div>
+                <div class="dropdown-content" id="drop-timer">
                     <h5>21/06/2024 or for you americans 06/21/2024</h5>
 
                     <h4 id="free">lets go home now<br> a countdown until the last second im legally obligated to go to high school</h4>
@@ -71,39 +69,41 @@ import BlogPost from '../components/blog.astro';
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> 
+            </div>
         </div>
 
         <div class="lineline"></div>
 
-        <div id="checkboxes">
-            <input type="checkbox" name="rGroup" value="2" id="r3"/>
-                <div class="box2-a-" id="box2">
-                    <label class="end" for="r3">
-                        <span class="material-symbols-outlined md">expand_more</span>
-                    </label>
-        
-                    <div class="box">
-                        <h3>what are you planning to do next?</h3>
-                    </div>
+        <div class="dropdown-regular">
+            <div class="dropdown-view">
+                <div class="end" onclick="getclickedboi('drop-me')">
+                    <span class="material-symbols-outlined md">expand_more</span>
+                </div>
 
+                <div class="box">
+                    <h3>what are you planning to do next?</h3>
+                </div>
+
+                <div class="dropdown-content" id="drop-me">
                     <h2>i think im going to focus on me for a while, to feel more comfortable with myself but ill still be updating here, cause its fun</h2>
                 </div>
+            </div>
         </div>
 
         <div class="lineline"></div>
 
-        <div id="checkboxes">
-            <input type="checkbox" name="rGroup" value="2" id="r4"/>
-                <div class="box2-a-" id="box2">
-                    <label class="end" for="r4">
-                        <span class="material-symbols-outlined md">expand_more</span>
-                    </label>
+        <div class="dropdown-regular">
+            <div class="dropdown-view">
+                <div class="end" onclick="getclickedboi('drop-socials')">
+                    <span class="material-symbols-outlined md">expand_more</span>
+                </div>
 
-                    <div class="box">
-                        <h3>socials!</h3>
-                    </div>
+                <div class="box">
+                    <h3>socials!</h3>
+                </div>
 
+                <div class="dropdown-content" id="drop-socials">
                     <h2>
                         <a href="">
                             discord - roxcelic #0001
@@ -120,24 +120,27 @@ import BlogPost from '../components/blog.astro';
                         </a>
                     </h2>
                 </div>
+            </div>
         </div>
         
         <div class="lineline"></div>
 
-        <div id="checkboxes">
-            <input type="checkbox" name="rGroup" value="2" id="r5"/>
-                <div class="box2-a-" id="box2">
-                    <label class="end" for="r5">
-                        <span class="material-symbols-outlined md">expand_more</span>
-                    </label>
+        <div class="dropdown-regular">
+            <div class="dropdown-view">
+                <div class="end" onclick="getclickedboi('drop-story')">
+                    <span class="material-symbols-outlined md">expand_more</span>
+                </div>
 
-                    <div class="box">
-                        <h3>i think im gonna start writing some short storys so watch out for them here ^^</h3>
-                    </div>
+                <div class="box">
+                    <h3>i think im gonna start writing some short storys so watch out for them here ^^</h3>
+                </div>
+
+                <div class="dropdown-content" id="drop-story">
                     <h2>
                         {allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} dates={post.frontmatter.pubDate} desc={post.frontmatter.desc} />)}
                     </h2>
                 </div>
+            </div>
         </div>
 
         <div class="lineline"></div>
@@ -203,4 +206,19 @@ import BlogPost from '../components/blog.astro';
             }
         },1000);
 
+    function getclickedboi(id){
+        let cu = document.getElementById(id);
+        console.log(cu.style.height);
+        if (cu.style.height){
+            console.log("hey");
+            cu.style.height = ("");
+        }
+        else{
+            if(!cu.style.height){
+                console.log("bye");
+                console.log(cu.scrollHeight,"px");
+                cu.style.height = (cu.scrollHeight + "px");
+            }
+        }
+    }
 </script>

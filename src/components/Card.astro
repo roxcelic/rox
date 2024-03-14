@@ -5,25 +5,36 @@ interface Props {
 
 const {hey} = Astro.props;
 ---
-<div class="wrapper">
-	<div class="inner">
-		<h2>hey</h2>
-		<h2>hey</h2>
-		<h2>hey</h2>
-		<h2>hey</h2>
-		<h2>hey</h2>
-		<h2>hey</h2>
+<div class="dropdown-box">
+	<div class="dropdown-view">
+		<div class="end2" onclick="getclickedboi('dropdown')">
+			<span class="material-symbols-outlined md">menu</span>
+		</div>
+
+		<div class="box">
+			<a href="/"><h3>home</h3></a>
+			<div class="vertical-row"></div><a href="/blog/"><h3>blog</h3></a>
+			<div class="vertical-row"></div><a href="/projects/"><h3>projects</h3></a>
+			<div class="vertical-row"></div><a href="/roxie/"><h3>roxie!</h3></a>
+		</div>
 	</div>
-  </div>
-  
+	<div class="dropdown-content" id="dropdown">
+		<h2>{hey}</h2>
+			<div class="lineline"></div>
+            <h2 id="curr"></h2>
+            <div class="block">
+				<h2 id="song">
+                    roxie is currently not listening too or watching anything
+				</h2>
+				<h2>
+                	<a id="link"><div class="image" id="image"></div></a>
+				</h2>
+            </div>
+			<div class="lineline"></div>
+	</div>
+</div>
 
 <script is:inline>
-	var body = document.body,
-    	html = document.documentElement;
-
-	let el = document.querySelector('.box2');
-	let height = el.scrollHeight;
-	el.style.setProperty('--max-height', height + 'px');
 
 	const userName = 'roxcelic';
 
@@ -36,8 +47,6 @@ const {hey} = Astro.props;
 	let song = document.getElementById("song");
 
 	let curr = document.getElementById("curr");
-
-	let box = document.getElementById("curr");
 
 	var current = "";
 	var has = "";
@@ -63,23 +72,37 @@ const {hey} = Astro.props;
 
 				/*height changer thing*/
 				current = "True";
-				x2();
 
 			} else {
 				song.innerHTML = ('roxie is currently not listening too or watching anything');
 				curr.innerHTML = ('')
-				images.style.width="0vh";
-				images.style.height= "0vh";
+				images.style.width="10vh";
+				images.style.height= "10vh";
 				images.style.backgroundImage="";
 				images.style.border = "";
 
 				/*height changer thing*/
 				current = "False";
-				x2();
 			}
 	  	})
 	  	.catch(error => {
 			console.error('Error fetching data from Last.fm:', error);
 	  	});
 	},1000);
+
+	function getclickedboi(id){
+        let cu = document.getElementById(id);
+        console.log(cu.style.height);
+        if (cu.style.height){
+            console.log("hey");
+            cu.style.height = ("");
+        }
+        else{
+            if(!cu.style.height){
+                console.log("bye");
+                console.log(cu.scrollHeight,"px");
+                cu.style.height = (cu.scrollHeight + "px");
+            }
+        }
+    }
 </script>

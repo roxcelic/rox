@@ -10,34 +10,82 @@ import Blog from '../components/blog.astro';
             </h4>
             <h2>below will be a list of my finished, or unfinished projects. Feel free to take a look!</h2>
         
-            <h2>-a website page-</h2>
-            <a href="/projects/3/">
-                <div class="boxL" onmouseover="item_hover('this does the same thing as the python version, yet it is more accessable as it is on the web','item0')" onmouseleave="item_hover('my encryption format but in js and on my website!','item0')">
-                    <h2 id="item0">my encryption format but in js and on my website!</h2>              
-                </div>
-            </a>
+            <div class="lineline"></div>
 
-            <a href="/projects/bot">
-                <div class="boxL" onmouseover="item_hover('yeah no, it cant really do anything rn lmao','item1')" onmouseleave="item_hover('my super awesome (and definatly not useless) discord bot','item1')">
-                    <h2 id="item1">my super awesome (and definatly not useless) discord bot</h2>    
-                </div>
-            </a>
+            <div class="dropdown-regular">
+                <div class="dropdown-view">
+                    <div class="end" onclick="getclickedboi('drop-page')">
+                        <span class="material-symbols-outlined md">expand_more</span>
+                    </div>
 
-            <h2>-not a website page-</h2>
+                    <div class="box">
+                        <h2>-a website page-</h2>
+                    </div>
+
+                    <div class="dropdown-content" id="drop-page">
+
+                        <a href="/projects/3/">
+                            <div class="boxL" onmouseover="item_hover('this does the same thing as the python version, yet it is more accessable as it is on the web','item0')" onmouseleave="item_hover('my encryption format but in js and on my website!','item0')">
+                                <h2 id="item0">my encryption format but in js and on my website!</h2>              
+                            </div>
+                        </a>
+
+                        <a href="/projects/bot">
+                            <div class="boxL" onmouseover="item_hover('yeah no, it cant really do anything rn lmao','item1')" onmouseleave="item_hover('my super awesome (and definatly not useless) discord bot','item1')">
+                                <h2 id="item1">my super awesome (and definatly not useless) discord bot</h2>    
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lineline"></div>
             
-            <a href="/images/player.png">
-                <div class="boxL" onmouseover="item_hover('here is the beta design for the player character','lez0')" onmouseleave="item_hover(' character design!','lez0')">
-                    <h2 id="lez0">character design!</h2>             
-                </div>
-            </a>
+            <div class="dropdown-regular">
+                <div class="dropdown-view">
+                    <div class="end" onclick="getclickedboi('drop-pagenot')">
+                        <span class="material-symbols-outlined md">expand_more</span>
+                    </div>
 
-            <a href="/images/player.gif">
-                <div class="boxL" onmouseover="item_hover('here is an odd little animation of the player character I made! (shhhhhhhhhhh pg 13)','lez1')" onmouseleave="item_hover('an animation of the character!','lez1')">
-                    <h2 id="lez1">an animation of the character!</h2>
+                    <div class="box">
+                        <h2>-not a website page-</h2>
+                    </div>
+
+                    <div class="dropdown-content" id="drop-pagenot">
+                        <a href="/images/player.png">
+                            <div class="boxL" onmouseover="item_hover('here is the beta design for the player character','lez0')" onmouseleave="item_hover(' character design!','lez0')">
+                                <h2 id="lez0">character design!</h2>             
+                            </div>
+                        </a>
+            
+                        <a href="/images/player.gif">
+                            <div class="boxL" onmouseover="item_hover('here is an odd little animation of the player character I made! (shhhhhhhhhhh pg 13)','lez1')" onmouseleave="item_hover('an animation of the character!','lez1')">
+                                <h2 id="lez1">an animation of the character!</h2>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </a>
-            <h2><span id="repocount"></span> -github repositories-</h2>
-            <div id="github"></div>
+            </div>
+
+            <div class="lineline"></div>
+            
+            <div class="dropdown-regular">
+                <div class="dropdown-view">
+                    <div class="end" onclick="getclickedboi('drop-github')">
+                        <span class="material-symbols-outlined md">expand_more</span>
+                    </div>
+
+                    <div class="box">
+                        <h2>-github repositorys-</h2>
+                    </div>
+
+                    <div class="dropdown-content" id="drop-github">
+                        <div id="github"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lineline"></div>
 	</main>
 </Layout>
 
@@ -94,6 +142,22 @@ fetch(apirepo + '/repos')
     .catch(error => {
         console.error('Error fetching data:', error);
     });
+
+    function getclickedboi(id){
+        let cu = document.getElementById(id);
+        console.log(cu.style.height);
+        if (cu.style.height){
+            console.log("hey");
+            cu.style.height = ("");
+        }
+        else{
+            if(!cu.style.height){
+                console.log("bye");
+                console.log(cu.scrollHeight,"px");
+                cu.style.height = (cu.scrollHeight + "px");
+            }
+        }
+    }
 
 </script>
 <style>
