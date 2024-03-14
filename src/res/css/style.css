@@ -172,8 +172,10 @@
     display: inline-block;
     margin-top: -2.5px;
 }
-/*the menu box*/
-.box2{
+.wrapper {
+    display: grid;
+    grid-rows: 0fr;
+    transition: grid-template-rows 0.5s ease-out;
     animation-fill-mode: forwards;
     display: block;
     text-align: center;
@@ -186,44 +188,18 @@
     overflow: hidden;
     border: 3px solid var(--main-color);
     background-color: var(--alt-color);
-}
-/*the menu box*/
-.box2-a-{
-    animation-fill-mode: forwards;
-    display: block;
-    text-align: center;
-    position: relative;
-    width: 100%;
-    height: 2.5vh;
-    min-height: min-content;
-    overflow: hidden;
-}
-/*the actual dropdown itself*/
-#checkboxes input[type="checkbox"] {
-    display: none;
-}
-
-#checkboxes input[type="checkbox"]:checked + #box {
-    display: block;
-    text-align: center;
-    position: relative;
-    margin-top: 5%;
-    width: 79%;
-    left: 9%;
-    height: auto;
-    max-height: 100vh;
-    overflow: hidden;
-}
-
-#checkboxes input[type="checkbox"]:checked + #box2 {
-    display: block;
-    text-align: center;
-    position: relative;
-    width: 100%;
+  }
+  
+  .wrapper:hover{
+    grid-rows: 1fr;
     height: fit-content;
-    max-height: 100vh;
+    background-color: aqua;
+  }
+  
+  .inner {
     overflow: hidden;
-}
+  }
+  
 
 /*animations*/
 @keyframes rainbow{

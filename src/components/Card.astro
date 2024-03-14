@@ -5,38 +5,17 @@ interface Props {
 
 const {hey} = Astro.props;
 ---
-<div id="checkboxes">
-    <input type="checkbox" name="rGroup" value="1" id="r1"/>
-        <div class="box2" id="box">
-            <label class="end" for="r1">
-                <span class="material-symbols-outlined md">menu</span>
-            </label>
-
-            <div class="box">
-                <a href="/"><h3>home</h3></a>
-                <div class="vertical-row"></div><a href="/blog/"><h3>blog</h3></a>
-                <div class="vertical-row"></div><a href="/projects/"><h3>projects</h3></a>
-                <div class="vertical-row"></div><a href="/roxie/"><h3>roxie!</h3></a>
-            </div>
-
-            <div class="box">
-                <a><h3></h3></a>
-            </div>
-
-			<h2>{hey}</h2>
-			<div class="lineline"></div>
-            <h2 id="curr"></h2>
-            <div class="block">
-				<h2 id="song">
-                    roxie is currently not listening too or watching anything
-				</h2>
-				<h2>
-                	<a id="link"><div class="image" id="image"></div></a>
-				</h2>
-            </div>
-			<div class="lineline"></div>
-        </div>
-</div>
+<div class="wrapper">
+	<div class="inner">
+		<h2>hey</h2>
+		<h2>hey</h2>
+		<h2>hey</h2>
+		<h2>hey</h2>
+		<h2>hey</h2>
+		<h2>hey</h2>
+	</div>
+  </div>
+  
 
 <script is:inline>
 	var body = document.body,
