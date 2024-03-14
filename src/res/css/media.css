@@ -25,7 +25,6 @@
 @media (any-pointer: coarse) {
     .boxL{
         display: inline-block;
-        position: relative;
         top: 100%;
         width: 94.7%;
         border: 3px solid var(--main-color);
@@ -36,7 +35,6 @@
     }
     .boxL:hover{
         display: inline-block;
-        position: relative;
         top: 100%;
         width: 99.7%;
         border: 3px solid var(--main-color);
