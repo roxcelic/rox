@@ -77,6 +77,24 @@ import BlogPost from '../components/blog.astro';
 
         <div class="dropdown-regular">
             <div class="dropdown-view">
+                <div class="end" onclick="getclickedboi('drop-spoti')">
+                    <span class="material-symbols-outlined md">expand_more</span>
+                </div>
+
+                <div class="box">
+                    <h2>my spotify playlist</h2>
+                </div>
+
+                <div class="dropdown-content" id="drop-spoti">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6mmx1UmZjFwa39CAjGQ4BJ?utm_source=generator" width="100%" height="352" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="lineline"></div>
+
+        <div class="dropdown-regular">
+            <div class="dropdown-view">
                 <div class="end" onclick="getclickedboi('drop-me')">
                     <span class="material-symbols-outlined md">expand_more</span>
                 </div>
