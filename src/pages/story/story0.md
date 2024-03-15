@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: 'placeholder'
-pubDate: 2024.09.03
-desc: 'the book number 0 (soon)'
-author: 'roxanne angel-grist'
-credits: 
+title: 'Where it belongs - chapter 1'
+pubDate: 00.03.2024
+desc: ''
+author: 'Roxanne Angel-Grist'
+credits: 'me and only me'
 ---
-why are you here, weirdo
+
