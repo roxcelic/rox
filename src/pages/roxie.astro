@@ -1,7 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const allPosts = await Astro.glob('../pages/story/*.md');
-import BlogPost from '../components/blog.astro';
 ---
 
 <Layout title="roxie!" hey='this is my page, my page and its all about me, yeah all about me'>
@@ -146,26 +144,6 @@ import BlogPost from '../components/blog.astro';
                         <a href="https://open.spotify.com/user/onyc3nppnjac08vatfd8uulav">
                             spotify - roxie
                         </a>
-                    </h2>
-                </div>
-            </div>
-        </div>
-        
-        <div class="lineline"></div>
-
-        <div class="dropdown-regular">
-            <div class="dropdown-view">
-                <div class="end" onclick="getclickedboi('drop-story')">
-                    <span class="material-symbols-outlined md">expand_more</span>
-                </div>
-
-                <div class="box">
-                    <h3>i think im gonna start writing some short storys so watch out for them here ^^</h3>
-                </div>
-
-                <div class="dropdown-content" id="drop-story">
-                    <h2>
-                        {allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} dates={post.frontmatter.pubDate} desc={post.frontmatter.desc} />)}
                     </h2>
                 </div>
             </div>
