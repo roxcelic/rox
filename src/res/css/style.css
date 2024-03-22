@@ -223,6 +223,18 @@
     overflow: hidden;
 }
 
+.pixelated {
+    image-rendering: pixelated;
+    display: inline;
+}
+
+.woo{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+  
+
 /*animations*/
 @keyframes spin{
     0%{rotate: 0deg;}
