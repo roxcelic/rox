@@ -82,18 +82,13 @@
     /*this is the text*/
     h1{
         color: var(--font);
-        font-size: x-small;
+        font-size: xx-small;
     }
 
     h2{
         color: var(--font);
         font-size: x-small;
         text-align: center;
-    }
-
-    h3{
-        color: var(--font);
-        font-size: xx-small;
     }
 
     h4{
@@ -103,24 +98,6 @@
         text-align: center;
     }
 
-    h5{
-        color: var(--font);
-        font-size: medium;
-        align-content: center;
-        text-align: center;
-    }
-
-    h6{
-        color: var(--font);
-        font-size: small;
-        font-weight: bold;
-        text-align: center;
-        white-space: pre-wrap; 
-        white-space: -moz-pre-wrap;
-        white-space: -pre-wrap;
-        white-space: -o-pre-wrap;
-        word-wrap: break-word;
-    }
 }
 
 @media (min-width: 800px) {
@@ -159,18 +136,13 @@
     /*this is the text*/
     h1{
         color: var(--font);
-        font-size: small;
+        font-size: x-small;
     }
 
     h2{
         color: var(--font);
         font-size: small;
         text-align: center;
-    }
-
-    h3{
-        color: var(--font);
-        font-size: x-small;
     }
 
     h4{
@@ -180,24 +152,6 @@
         text-align: center;
     }
 
-    h5{
-        color: var(--font);
-        font-size: medium;
-        align-content: center;
-        text-align: center;
-    }
-
-    h6{
-        color: var(--font);
-        font-size: medium;
-        font-weight: bold;
-        text-align: center;
-        white-space: pre-wrap; 
-        white-space: -moz-pre-wrap;
-        white-space: -pre-wrap;
-        white-space: -o-pre-wrap;
-        word-wrap: break-word;
-    }
 }
 
 @media (min-width: 1600px) {
@@ -205,7 +159,7 @@
     /*this is the text*/
     h1{
         color: var(--font);
-        font-size: medium;
+        font-size: small;
     }
 
     h2{
@@ -214,34 +168,10 @@
         text-align: center;
     }
 
-    h3{
-        color: var(--font);
-        font-size: small;
-    }
-
     h4{
         color: var(--font);
         font-size: large;
         font-weight: bold;
         text-align: center;
-    }
-
-    h5{
-        color: var(--font);
-        font-size: medium;
-        align-content: center;
-        text-align: center;
-    }
-
-    h6{
-        color: var(--font);
-        font-size: large;
-        font-weight: bold;
-        text-align: center;
-        white-space: pre-wrap; 
-        white-space: -moz-pre-wrap;
-        white-space: -pre-wrap;
-        white-space: -o-pre-wrap;
-        word-wrap: break-word;
     }
 }

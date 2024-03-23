@@ -34,11 +34,15 @@ import '../res/js/set.js';
             <marquee>
                 <p><div class="boxs2">{frontmatter.desc}{frontmatter.credits}</div></p>
             </marquee>
-            <h2><slot /></h2>
+            <div class="text"><slot /></div>
         </h2>
     </div>
 
     <style>
+        .text{
+            color: var(--font);
+            font-size: 1rem;
+        }
         .boxs{
             font-size: 0.75rem;
             color: white;

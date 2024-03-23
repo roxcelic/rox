@@ -6,7 +6,7 @@ desc: 'The future of my epic gaming'
 author: 'roxanne angel-grist'
 credits: 
 ---
-hey!
+### hey!
 
 So, if you've been watching me for a while then you'd notice that a lot of the blogs are gone.
 Thats because I deleted them because I felt like they didnt show how I wanted the blogs to be used

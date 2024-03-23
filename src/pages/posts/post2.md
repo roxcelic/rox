@@ -1,35 +1,66 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: 'my awesome exam time-table (end me please)'
-pubDate: 2024.13.03
-desc: '100 days left today yayyyyyyyyyy'
+title: 'test i think'
+pubDate: 2024.22.03
+desc: 'marking and downing'
 author: 'roxanne angel-grist'
 credits: 
 ---
-since you all know im almost done with school, ive got my final exam dates and so here they are:
+# hi 
+## hi
+### hi
+#### hi
+##### hi
+###### hi
 
-(this is also not all my exams just the ones i was given on the sheet, so it doesnt have stuff like art)
+**im not just serious, im bold**
 
-Fri 10/05/2024 - 9:30 - 75 mins - combine science trillogy Biology P1H
+*im to tired to stand up straight*
 
-Mon 13/05/2024 - 09:30 - 105 mins - English Literature Paper 1
-Wed 15/05/2024 - 13:30 - 90 mins - Principle of Comp.sci
-Thu 16/05/2024 - 09:30 - 90 mins - Mathamatics paper 1 Tier H
-Fri 17/05/2024 - 09:30 - 75 mins - combined Science trillogy chemestry P!H
+> im not even sure i know what this is
 
-Mon 20/05/2024 - 09:30 - 135 mins - English lit Paper 2
-Tue 21/05/2024 - 13:30 - 120 mins - Application comp. thinking
-Wed 22/05/2024 - 09:30 - 75 mins - combined Science trillogy Physicis P1H
-Thu 23/05/2024 - 09:30 - 105 mins - English language paper 1
+1. First item
+2. Second item
+3. Third item
 
-Mon 03/06/2024 - 09:30 - 90 mins - Mathamatics Paper 2 Tier H
-Thu 06/06/2024 - 09:30 - 105 mins - English language paper 2
-Fri 07/06/2024 - 13:30 - 75 mins - combined science trillogy Biology P2H
+- First item
+- Second item
+- Third item
 
-Mon 10/06/2024 - 09:30 - 90 mins - Mathamatics Paper 3
-Tue 11/06/2024 - 09:30 - 75 mins - combined science trillogy chemestry P2H
-Fri 14/06/2024 - 13:30 - 75 mins - combined science trillogy Physicis P2H
+- [x] do the first thing
+- [ ] do the third thing
+- [ ] do the second thing
 
-Mon 17/06/2024 - 13:30 - 90 mins - Music written paper
+![hey](/images/banger.gif)
 
-also I might update this page as my exams go on to show which ones ive finished already
+
+```md
+im not sure why the background goes like this but its pretty cool
+
+# hi 
+## hi
+### hi
+#### hi
+##### hi
+###### hi
+
+**im not just serious, im bold**
+
+*im to tired to stand up straight*
+
+> im not even sure i know what this is
+
+1. First item
+2. Second item
+3. Third item
+
+- First item
+- Second item
+- Third item
+
+- [x] do the first thing
+- [ ] do the third thing
+- [ ] do the second thing
+
+![hey](/images/banger.gif)
+```

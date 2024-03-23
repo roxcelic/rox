@@ -1,107 +1,37 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: 'a re-post of old blogs!'
-pubDate: 2024.26.02
-desc: 'a re-release of old blog posts'
+title: 'my awesome exam time-table (end me please)'
+pubDate: 2024.13.03
+desc: '100 days left today yayyyyyyyyyy'
 author: 'roxanne angel-grist'
 credits: 
 ---
-old posts reposted!
+since you all know im almost done with school, ive got my final exam dates and so here they are:
 
--post1-
+(this is also not all my exams just the ones i was given on the sheet, so it doesnt have stuff like art)
 
-26/01/2024
-Hi, welcome to my blog. This is only the first one so I dont have much to say. I will be updating this as often as I'd like
-in what most people would call an unefficient way because I see no other way and it doesnt really matter anyways, the repo
-will just have a lot of commits. It doesnt hurt anyone and I doubt anyone will actually care, at least I hope anyways.
+```
+Fri 10/05/2024 - 9:30 - 75 mins - combine science trillogy Biology P1H
 
-whats been up?
+Mon 13/05/2024 - 09:30 - 105 mins - English Literature Paper 1
+Wed 15/05/2024 - 13:30 - 90 mins - Principle of Comp.sci
+Thu 16/05/2024 - 09:30 - 90 mins - Mathamatics paper 1 Tier H
+Fri 17/05/2024 - 09:30 - 75 mins - combined Science trillogy chemestry P!H
 
-Recently there hasnt been much going on except trying to force my friends to watch hazbin hotel although I doubt they will
-no ones probably gonna read this anyways so I can really just put whatever I what here and no one will care
+Mon 20/05/2024 - 09:30 - 135 mins - English lit Paper 2
+Tue 21/05/2024 - 13:30 - 120 mins - Application comp. thinking
+Wed 22/05/2024 - 09:30 - 75 mins - combined Science trillogy Physicis P1H
+Thu 23/05/2024 - 09:30 - 105 mins - English language paper 1
 
-byeee nerds
+Mon 03/06/2024 - 09:30 - 90 mins - Mathamatics Paper 2 Tier H
+Thu 06/06/2024 - 09:30 - 105 mins - English language paper 2
+Fri 07/06/2024 - 13:30 - 75 mins - combined science trillogy Biology P2H
 
--post2-
+Mon 10/06/2024 - 09:30 - 90 mins - Mathamatics Paper 3
+Tue 11/06/2024 - 09:30 - 75 mins - combined science trillogy chemestry P2H
+Fri 14/06/2024 - 13:30 - 75 mins - combined science trillogy Physicis P2H
 
-26/01/2024
-Hi, welcome to my blog. This is only the first one so I dont have much to say. I will be updating this as often as I'd like
-in what most people would call an unefficient way because I see no other way and it doesnt really matter anyways, the repo
-will just have a lot of commits. It doesnt hurt anyone and I doubt anyone will actually care, at least I hope anyways.
+Mon 17/06/2024 - 13:30 - 90 mins - Music written paper
+```
 
-whats been up?
-
-Recently there hasnt been much going on except trying to force my friends to watch hazbin hotel although I doubt they will
-no ones probably gonna read this anyways so I can really just put whatever I what here and no one will care
-byeee nerds
-
--post3-
-
-05/02/2024
-
-Hiii again, doubt anyones gonna read this but I gotta say the new hazbin hotel season has been absolutly beautiful and I loved
-every second of it!
-
-whats been up?
-well I recently just found out theres only like 5 months or so left of high school, so exciting. I cant wait do be done with it
-and most people there. Im hoping mabey I can convince my mum to get me new clothes when I finish but I doubt that (137 days left!!!)
-
-I also started work on game dev again and I made that silly thing up there!
-
-byeee nerds
-
--post4-
-
-06/02/2024 (part 2)
-
-The purpose of this blog is to explain the change and how I want to use the blogs from now on
-
-From now on, the blog page in the root of this site will display the latest blog post which I think is interesting
-so it may not be the newest but it will contain the most viable information
-
-blog posts will contain
-
-A blog post will either have some js testing in based on my new desire to learn more and to improve
-A dated post and a title
-A topic of my choosing each only having one
-and it may contain a box about the words displaying an image or my choosing which I find to fit the theme
-
-these rules are not solid and since it is my website I can do what I want with them haha, but I will try and follow these
-rules just to make it easier on the user ^^
-
--post5-
-
-Hello, this is a full description of my plan for whats next
-
-so, I mentioned in my previous post that I plan to revamp how I'm planning on using my blogs from now on and its purpose, in truth the blog posts are more for me than anyone else. So in about 5 months I can look back on myself and see how much I've grown and for somthing like that I would like it to be special and well presented. So I'm going to change how they're used from now on in order to have somthing I can be proud off.
-
-
-How do I plan to do this?
-
-
-I actually don't know, I dont have a full plan on how I plan to have them to look and honestly I think ill come back and change them as I grow and learn, so with my constantly improving skill set they will continuously look better.
-
-
-What about the future of the website?
-
-
-In all honestly I also couldn't tell you the answer for that either, there is so much happening in my life right now and a lot of it will change my life forever which overall is a pretty big statment and quite hard to comprihend. A lot of my time from now on will probably be spent working on my music GCSE as it is currently the only on that I'm predicted just about a pass in, which isnt bad persay but among the other high grades of mine it is a vast ajustment.
-
-
-Are there any guranteed blog posts that will be made?
-
-
-In fact yes, there are a few already made blog posts dedicated to my future and my life. They will probably be published around the time the countdown finished (when I leave school), they are mostly directed towards my current friends in a descreet way. One which wont publish any personal details and will mostly be a thank you, excluding some people.
-
-
-What about your game?
-
-
-my game is still massivly under construction but I do have many of the basics figured out. It is going to be a 2d platformer thats rhythm based, it will have some pretty dark and heavy undertones with multiple endings along with skipable but interesting character dialog, expect a rough run down of the protaganist in the future. Although the game is currently name less its previous name was 'shards' and it was designed with my friends and my current life at the time in mind, although now I am planning on going down a completely different path with it and honestly I'm really excited to see where it takes me. With this newer version of the game I plan to treat it as an actual game and a project with releasing constant updates and it will more than likely be a paid game on release rather than the free game it was originally intended to be as I'd like it to be more than a hobby and somthing that will be a large part of my carrier.
-
-
-Thats all for now, thank you and goodnight ^-^
-
--end of posts-
-
-remeber, all promises made in these posts may not be kept as they where old posts taken from an older site and have a good day (:
+also I might update this page as my exams go on to show which ones ive finished already
