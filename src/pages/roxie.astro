@@ -52,6 +52,7 @@ import Layout from '../layouts/Layout.astro';
 
                     <h2>this is a countdown until the next 'big' date, the dates are:</h2>
                     <h1>28/03/2024 - 15/04/2024 - 24/05/2024 - 03/06/2024 - 21/06/2024</h1>
+                    <h1 id="free2"></h1>
                     <div class="timer2">
                         <div class="timer">
                             <div>
@@ -160,6 +161,19 @@ import Layout from '../layouts/Layout.astro';
         document.getElementById(ids).innerHTML = description;
     }
 
+    //stuff to make may happy, again.
+    let html_days = document.getElementById("days");
+    let html_hours = document.getElementById("hours");
+    let html_minutes = document.getElementById("minutes");
+    let html_seconds = document.getElementById("seconds");
+    let html_free = document.getElementById("free");
+
+    let html_days2 = document.getElementById("days2");
+    let html_hours2 = document.getElementById("hours2");
+    let html_minutes2 = document.getElementById("minutes2");
+    let html_seconds2 = document.getElementById("seconds2");
+    let html_free2 = document.getElementById("free2");
+
     let countDownDate = new Date(Date.UTC (2024, 5, 21, 14, 55, 0)).getTime();
         new Date(new Date().toLocaleString('en', {timeZone: 'America/New_York'}))
         
@@ -174,16 +188,16 @@ import Layout from '../layouts/Layout.astro';
                 let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                document.getElementById("days").innerHTML = days
-                document.getElementById("hours").innerHTML = hours
-                document.getElementById("minutes").innerHTML = minutes
-                document.getElementById("seconds").innerHTML = seconds
+                html_days.innerHTML = days
+                html_hours.innerHTML = hours
+                html_minutes.innerHTML = minutes
+                html_seconds.innerHTML = seconds
             } if (distance = 0 || distance < 0){
-                document.getElementById("days").innerHTML = 0
-                document.getElementById("hours").innerHTML = 0
-                document.getElementById("minutes").innerHTML = 0
-                document.getElementById("seconds").innerHTML = 0
-                document.getElementById("free").innerHTML = ("IM FREE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                html_days.innerHTML = 0
+                html_hours.innerHTML = 0
+                html_minutes.innerHTML = 0
+                html_seconds.innerHTML = 0
+                html_free.innerHTML = ("IM FREE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             }
         },1000);
 
@@ -199,16 +213,16 @@ import Layout from '../layouts/Layout.astro';
                 let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                document.getElementById("days2").innerHTML = days
-                document.getElementById("hours2").innerHTML = hours
-                document.getElementById("minutes2").innerHTML = minutes
-                document.getElementById("seconds2").innerHTML = seconds
+                html_days2.innerHTML = days
+                html_hours2.innerHTML = hours
+                html_minutes2.innerHTML = minutes
+                html_seconds2.innerHTML = seconds
             } if (distance = 0 || distance < 0){
-                document.getElementById("days2").innerHTML = 0
-                document.getElementById("hours2").innerHTML = 0
-                document.getElementById("minutes2").innerHTML = 0
-                document.getElementById("seconds2").innerHTML = 0
-                document.getElementById("free").innerHTML = ("finnaly I have a break, also ive probably forgotten to update this just now")
+                html_days2.innerHTML = 0
+                html_hours2.innerHTML = 0
+                html_minutes2.innerHTML = 0
+                html_seconds2.innerHTML = 0
+                html_free2.innerHTML = ("finnaly I have a break, also ive probably forgotten to update this just now")
             }
         },1000);
 
