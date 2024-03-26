@@ -78,9 +78,11 @@
     opacity: 0.5;
     display: inline-block;
     border-radius: 15px;
+    transition: opacity 0.25s;
 }
 .boxR:hover{
     opacity: 1;
+    transition: opacity 0.25s;
 }
 .boxL{
     display: inline-block;
@@ -92,6 +94,7 @@
     margin-bottom: 1.5%;
     border-radius: 15px;
     transition: width 0.5s;
+    transition: opacity 0.25s;
 }
 .boxL:hover{
     display: inline-block;
@@ -103,6 +106,7 @@
     margin-bottom: 1.5%;
     border-radius: 15px;
     transition: width 0.5s;
+    transition: opacity 0.25s;
 }
 
 /*stuff for the timer (on the roie page)*/

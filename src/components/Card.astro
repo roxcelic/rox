@@ -67,8 +67,6 @@ const {hey} = Astro.props;
 	let curr = document.getElementById("curr");
 
 	var current = "";
-	var has = "";
-	var extra = 0;
 
 	let x = setInterval(function(){
 		fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=${userName}&api_key=${apiKey}&format=json`)
@@ -110,15 +108,11 @@ const {hey} = Astro.props;
 
 	function getclickedboi(id){
         let cu = document.getElementById(id);
-        console.log(cu.style.height);
         if (cu.style.height){
-            console.log("hey");
             cu.style.height = ("");
         }
         else{
             if(!cu.style.height){
-                console.log("bye");
-                console.log(cu.scrollHeight,"px");
                 cu.style.height = (cu.scrollHeight + "px");
             }
         }
