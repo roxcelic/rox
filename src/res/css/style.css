@@ -62,27 +62,8 @@
 }
 
 /*this is for the stuff like the blog posts and the clickable buttons*/
-.menuR{
-    flex-wrap: wrap;
-}
-
 .menuL{
     flex-basis: 25%;
-}
-.boxR{
-    position:relative;
-    top: 100%;
-    width: 12.5%;
-    border: 3px solid var(--main-color);
-    background-color: var(--alt-color);
-    opacity: 0.5;
-    display: inline-block;
-    border-radius: 15px;
-    transition: opacity 0.25s;
-}
-.boxR:hover{
-    opacity: 1;
-    transition: opacity 0.25s;
 }
 .boxL{
     display: inline-block;
