@@ -1,13 +1,14 @@
 ---
 const { frontmatter } = Astro.props;
 import Box from '../components/Card.astro';
+import Bar from '../components/bar.astro';
 import '../res/css/style.css';
 import '../res/css/base.css';
 import '../res/css/media.css';
 import '../res/js/set.js';
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en" id="c-text">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="the worlds coolest website (because it was made by me)" />
@@ -18,34 +19,39 @@ import '../res/js/set.js';
 		<title>{frontmatter.title}</title>
     </head>
 
-    <Box
-	    hey={frontmatter.desc}
-    />
-
-    <div class="mainBox">
-        <div class="pictureBox"></div>
-		<a href="https://github.com/roxcelic">
-			<div class="roundThing"></div>
-		</a>
-        <h4>{frontmatter.title}</h4>
+    <body>
         <h2>
-            <p>Written by {frontmatter.author}</p>
-            description and credits (careful it moves):<br>
-            <marquee>
-                <p><div class="boxs2">{frontmatter.desc}{frontmatter.credits}</div></p>
-            </marquee>
-            <div class="text"><slot /></div>
+            <Box
+	            hey={frontmatter.desc}
+            />
         </h2>
-    </div>
 
-    <style>
-        .text{
-            color: var(--font);
-            font-size: 1rem;
-        }
-        .boxs{
-            font-size: 0.75rem;
-            color: white;
-        }
-    </style>
+        <div class="mainBox">
+            <div class="pictureBox"></div>
+		    <a href="https://github.com/roxcelic">
+			    <div class="roundThing"></div>
+		    </a>
+            <h4>{frontmatter.title}</h4>
+            <h2>
+                <p>Written by {frontmatter.author}</p>
+                description and credits<br>
+                    <p>{frontmatter.desc}{frontmatter.credits}</p>
+                <div class="text"><slot /></div>
+            </h2>
+        </div>
+        <Bar
+			title = {frontmatter.title}
+		/>
+
+        <style>
+            .text{
+                color: var(--font);
+                font-size: 1rem;
+            }
+            .boxs{
+                font-size: 0.75rem;
+                color: white;
+            }
+        </style>
+    </body>
 </html>

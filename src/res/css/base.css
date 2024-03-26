@@ -30,12 +30,13 @@ h1{
 h2{
     color: var(--font);
     font-size: 1rem;
-    text-align: center;
 }
 h4{
     color: var(--font);
     font-size: 1.1rem;
     font-weight: bold;
+}
+#c-text{
     text-align: center;
 }
 a:link {

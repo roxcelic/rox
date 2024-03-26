@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404" hey='are you lost you absolute goober????'>
+	<main>
+        <h2>sorry but the link:</h2>
+        <a id="lonk"><h2 id="link2"></h2></a>
+        <h2>doesnt exist, maybe try somthing else</h2>
+	</main>
+</Layout>
+
+<script is:inline>
+    document.getElementById('lonk').setAttribute('href', window.location.href);
+
+    document.getElementById("link2").innerHTML = window.location.href; 
+    console.log(window.location.href);
+</script>

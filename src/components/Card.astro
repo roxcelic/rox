@@ -12,10 +12,10 @@ const {hey} = Astro.props;
 		</div>
 
 		<div class="box">
-			<a href="/"><h1>home</h1></a>
-			<div class="vertical-row"></div><a href="/blog/"><h1>blog</h1></a>
-			<div class="vertical-row"></div><a href="/projects/"><h1>projects</h1></a>
-			<div class="vertical-row"></div><a href="/roxie/"><h1>roxie!</h1></a>
+			<a href="/"><h1 id="home">home</h1></a>
+			<div class="vertical-row"></div><a href="/blog/"><h1 id="blog">blog</h1></a>
+			<div class="vertical-row"></div><a href="/projects/"><h1 id="projects">projects</h1></a>
+			<div class="vertical-row"></div><a href="/roxie/"><h1 id="roxie">roxie!</h1></a>
 		</div>
 	</div>
 	<div class="dropdown-content" id="dropdown">
@@ -41,6 +41,18 @@ const {hey} = Astro.props;
 </div>
 
 <script is:inline>
+
+	let home = document.getElementById("home");
+	let blog = document.getElementById("blog");
+	let projects = document.getElementById("projects");
+	let roxie = document.getElementById("roxie");
+
+	let title = document.getElementById("title");
+
+	if (home.textContent == title.textContent){home.style.animation = 'rainbow 5s infinite'}
+	if (blog.textContent == title.textContent){blog.style.animation = 'rainbow 5s infinite'}
+	if (projects.textContent == title.textContent){projects.style.animation = 'rainbow 5s infinite'}
+	if (roxie.textContent == title.textContent){roxie.style.animation = 'rainbow 5s infinite'}
 
 	const userName = 'roxcelic';
 

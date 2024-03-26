@@ -2,8 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="home!" hey='live laugh love (see i put it up in my home, screw you all)'>
-	<main onkeypress="god_save_me()">
+<Layout title="home" hey='live laugh love (see i put it up in my home, screw you all)'>
+	<main>
 		<ul role="list">
 			<h2>
                 Hiiii
@@ -30,44 +30,3 @@ import Layout from '../layouts/Layout.astro';
 <style>
 	
 </style>
-
-<script is:inline>
-    const main = document.getElementById("main")
-    linebreak = document.createElement("br");
-    var item = 0;
-    var word = "howdy";
-    var key_list = "";
-
-    document.addEventListener(
-        "keydown",
-        function(event){
-            var current_key = event.key;
-            console.log('current_key: ',current_key);
-            if(current_key == word[item]){
-                key_list = key_list + current_key;
-                item++;
-                console.log('key_list: ',key_list);
-            }
-            else{
-                key_list = "";
-                item = 0;
-                console.log("sorry wrong letter");
-            }
-            if(key_list == word){
-                console.log("omg you did it yayyy");
-                key_list = "";
-                item = 0;
-
-                var a = document.createElement('a');
-                var link = document.createTextNode("lonk");
-                a.appendChild(link); 
-                a.href = ""; 
-
-                main.innerHTML = "theres nothing here yet, you just missed it ):";
-                main.appendChild(linebreak);
-                main.appendChild(a); 
-            }
-        },
-    );
-
-</script>
